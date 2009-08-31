@@ -12,11 +12,10 @@ use MooseX::AttributeHelpers;
 use Carp ();
 use Scalar::Util qw( reftype blessed );
 use Search::GIN::Extract::ClassMap::Types qw( :all );
-use aliased 'Search::GIN::Extract::ClassMap::Isa'  => 'IsaClassMap';
-use aliased 'Search::GIN::Extract::ClassMap::Does' => 'DoesClassMap';
-use aliased 'Search::GIN::Extract::ClassMap::Like' => 'LikeClassMap';
+use aliased 'Search::GIN::Extract::ClassMap::Isa'  => 'CMIsa';
+use aliased 'Search::GIN::Extract::ClassMap::Does' => 'CMDoes';
+use aliased 'Search::GIN::Extract::ClassMap::Like' => 'CMLike';
 use namespace::autoclean;
-
 
 with qw(
   Search::GIN::Extract
@@ -41,9 +40,9 @@ with qw(
 
 =cut
 
-has 'extract_isa'  => ( 'isa', SGE_IsaClassMap,  rw, coerce, default => sub { IsaClassMap->new() } );
-has 'extract_does' => ( 'isa', SGE_DoesClassMap, rw, coerce, default => sub { DoesClassMap->new() } );
-has 'extract'      => ( 'isa', SGE_LikeClassMap, rw, coerce, default => sub { LikeClassMap->new() } );
+has 'extract_isa'  => ( 'isa', IsaClassMap,  rw, coerce, default => sub { CMIsa->new() } );
+has 'extract_does' => ( 'isa', DoesClassMap, rw, coerce, default => sub { CMDoes->new() } );
+has 'extract'      => ( 'isa', LikeClassMap, rw, coerce, default => sub { CMLike->new() } );
 
 sub extract_values {
   my ( $self, $object ) = @_;
@@ -54,7 +53,6 @@ sub extract_values {
   push @found, $self->extract->extract_for($object);
   return @found;
 }
-
 
 1;
 

@@ -33,18 +33,23 @@ $map = new_ok( CM,
   }
 }
 
-$map = new_ok( CM, [ extract => {
-    baz => [qw( asd attr )]
-} ] );
+$map = new_ok( CM, [ extract => { baz => [qw( asd attr )] } ] );
 
 use Data::Dump qw( dump );
 
 dump $map->extract_values( baz->new() );
 
-$map = new_ok( CM, [ extract => { baz => sub {
-  my ( $self ) = @_;
-  { "foo" => $self->asd };
-}} ] );
+$map = new_ok( CM,
+  [
+    extract => {
+      baz => sub {
+        my ($self) = @_;
+        return { "foo" => $self->asd };
+        }
+    },
+    extract_isa => { baz => [qw( asd attr )], }
+  ]
+);
 
 use Data::Dump qw( dump );
 
