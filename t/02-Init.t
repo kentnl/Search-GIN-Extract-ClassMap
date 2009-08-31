@@ -45,7 +45,7 @@ $map = new_ok( CM,
       baz => sub {
         my ($self) = @_;
         return { "foo" => $self->asd };
-        }
+      },
     },
     extract_isa => { baz => [qw( asd attr )], }
   ]

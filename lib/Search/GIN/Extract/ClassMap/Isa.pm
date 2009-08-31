@@ -6,7 +6,7 @@ use warnings;
 use Moose;
 use MooseX::Types::Moose qw( :all );
 use namespace::autoclean;
-extends 'Search::GIN::Extract::ClassMap::Base';
+with 'Search::GIN::Extract::ClassMap::Base';
 
 
 
@@ -20,6 +20,9 @@ sub matches {
   }
   return;
 }
+
+no Moose;
+__PACKAGE__->meta->make_immutable;
 
 1;
 

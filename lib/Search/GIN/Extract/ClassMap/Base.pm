@@ -3,21 +3,20 @@ package Search::GIN::Extract::ClassMap::Base;
 # $Id:$
 use strict;
 use warnings;
-use Moose;
+use Moose::Role;
+
+requires 'matches';
+
 use MooseX::Types::Moose qw( :all );
-use MooseX::Has::Sugar;
 use MooseX::AttributeHelpers;
-use Scalar::Util qw( reftype blessed );
-#use Search::GIN::Extract::ClassMap::Conversion::FromArrayRef;
-#use Search::GIN::Extract::ClassMap::Conversion::FromCodeRef;
 use Search::GIN::Extract::ClassMap::Types qw( :all );
 use namespace::autoclean;
 with qw( Search::GIN::Keys::Deep );
 
 has classmap => (
-  isa => CoercedClassMap,
-  coerce => 1,
-  rw,
+  isa       => CoercedClassMap,
+  coerce    => 1,
+  is        => 'rw',
   default   => sub { +{} },
   metaclass => 'Collection::Hash',
   provides  => {
@@ -27,20 +26,10 @@ has classmap => (
   },
 );
 
-sub BUILD {
-  my ($self) = @_;
-}
-
-
-sub matches {
-  my ( $self, $object ) = @_;
-  return;
-}
-
 sub extract_for {
   my ( $self, $object ) = @_;
   my @found;
-  if( my $i = $self->matches( $object ) ){
+  if ( my $i = $self->matches($object) ) {
     push @found, $i->extract_values($object);
   }
   return @found;

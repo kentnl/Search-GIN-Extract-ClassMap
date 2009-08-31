@@ -47,7 +47,6 @@ has 'extract'      => ( 'isa', LikeClassMap, rw, coerce, default => sub { CMLike
 sub extract_values {
   my ( $self, $object ) = @_;
   my @found;
-  my ( $isa, $does, $all );
   push @found, $self->extract_isa->extract_for($object);
   push @found, $self->extract_does->extract_for($object);
   push @found, $self->extract->extract_for($object);

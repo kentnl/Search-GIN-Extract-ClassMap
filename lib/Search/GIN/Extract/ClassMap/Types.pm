@@ -4,7 +4,6 @@ package Search::GIN::Extract::ClassMap::Types;
 use strict;
 use warnings;
 use MooseX::Types::Moose qw( :all );
-use Scalar::Util qw( refaddr );
 use MooseX::Types -declare => [
   qw[
     IsaClassMap
@@ -15,17 +14,13 @@ use MooseX::Types -declare => [
     ]
 ];
 
-
-class_type IsaClassMap,       { class => 'Search::GIN::Extract::ClassMap::Isa' };
-class_type DoesClassMap,      { class => 'Search::GIN::Extract::ClassMap::Does' };
-class_type LikeClassMap,      { class => 'Search::GIN::Extract::ClassMap::Like' };
+class_type IsaClassMap,  { class => 'Search::GIN::Extract::ClassMap::Isa' };
+class_type DoesClassMap, { class => 'Search::GIN::Extract::ClassMap::Does' };
+class_type LikeClassMap, { class => 'Search::GIN::Extract::ClassMap::Like' };
 subtype Extractor, as Object, where {
   $_->does('Search::GIN::Extract')
-    or $_->isa('Search::GIN::Extract')
+    or $_->isa('Search::GIN::Extract');
 };
-
-use Search::GIN::Extract::Attributes ();
-use Search::GIN::Extract::Callback  ();
 
 coerce IsaClassMap, from HashRef, via {
   require Search::GIN::Extract::ClassMap::Isa;
@@ -40,30 +35,36 @@ coerce LikeClassMap, from HashRef, via {
   'Search::GIN::Extract::ClassMap::Like'->new( classmap => $_ );
 };
 
-coerce Extractor, from ArrayRef, via { Search::GIN::Extract::Attributes->new( attributes => $_ ) };
-coerce Extractor, from CodeRef, via { Search::GIN::Extract::Callback->new( extract => $_ ); };
+coerce Extractor, from ArrayRef, via {
+  require Search::GIN::Extract::Attributes;
+  Search::GIN::Extract::Attributes->new( attributes => $_ )
 
-{
-  my $checkedHashRefs;
+};
+coerce Extractor, from CodeRef, via {
+  require Search::GIN::Extract::Callback;
+  Search::GIN::Extract::Callback->new( extract => $_ );
+};
 
-  subtype CoercedClassMap, as HashRef, where {
-    return unless exists $checkedHashRefs->{ refaddr($_) };
-    for my $key ( keys %{ $_ } ){
-      return unless is_Extractor( $_->{$key} );
-    }
-    return 1;
-  };
+subtype CoercedClassMap, as HashRef, where {
+  for my $v ( values %{$_} ) {
+    return unless is_Extractor($v);
+  }
+  return 1;
+}, message {
+  for my $k ( keys %{$_} ) {
+    next if is_Extractor( $_->{$k} );
+    return "Key $k in the hash expected Search::GIN::Extract implementation";
+  }
+};
 
-  coerce CoercedClassMap, from HashRef, via {
-      my $newhashref = {};
-      my $old = $_;
-      for my $key ( keys %{ $old } ){
-        $newhashref->{$key} = to_Extractor( $old->{$key} );
-      }
-      $checkedHashRefs->{ refaddr( $newhashref ) } = 1;
-      return $newhashref;
-  };
-}
+coerce CoercedClassMap, from HashRef, via {
+  my $newhashref = {};
+  my $old        = $_;
+  for my $key ( keys %{$old} ) {
+    $newhashref->{$key} = to_Extractor( $old->{$key} );
+  }
+  return $newhashref;
+};
 
 1;
 
