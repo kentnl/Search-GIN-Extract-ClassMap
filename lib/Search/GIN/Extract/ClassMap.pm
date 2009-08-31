@@ -13,7 +13,6 @@ use aliased 'Search::GIN::Extract::ClassMap::Does' => 'CMDoes';
 use aliased 'Search::GIN::Extract::ClassMap::Like' => 'CMLike';
 use namespace::autoclean;
 
-
 =head1 SYNOPSIS
 
   my $extractor = Search::GIN::Extract::ClassMap->new(
@@ -53,6 +52,10 @@ automatically.
 
 =cut
 
+=head1 WARNING
+
+This is an early release, API is prone to change without much warning, but best attempts will be made to avoid the need.
+
 =head1 ROLES
 
 =head2 L<Search::GIN::Extract>
@@ -62,7 +65,6 @@ automatically.
 with qw(
   Search::GIN::Extract
 );
-
 
 =head1 ATTRIBUTES
 
