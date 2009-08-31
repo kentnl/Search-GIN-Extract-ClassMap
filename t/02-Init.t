@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use Test::More tests                         => 3;
+use Test::More tests                         => 6;
 use aliased 'Search::GIN::Extract::ClassMap' => 'CM';
 
 my $map = new_ok( CM,
@@ -35,9 +35,7 @@ $map = new_ok( CM,
 
 $map = new_ok( CM, [ extract => { baz => [qw( asd attr )] } ] );
 
-use Data::Dump qw( dump );
-
-dump $map->extract_values( baz->new() );
+is_deeply( [ sort $map->extract_values( baz->new() ) ], ['attr:world'] );
 
 $map = new_ok( CM,
   [
@@ -51,7 +49,5 @@ $map = new_ok( CM,
   ]
 );
 
-use Data::Dump qw( dump );
-
-dump $map->extract_values( baz->new() );
+is_deeply( [ sort $map->extract_values( baz->new() ) ], [ sort ( 'attr:world', 'foo:hello', ) ] );
 
