@@ -1,22 +1,43 @@
-package Search::GIN::Extract::ClassMap::Does;
-
-# $Id:$
 use strict;
 use warnings;
+package Search::GIN::Extract::ClassMap::Does;
+
+# ABSTRACT: Map Extractors based on what an object 'does'
+
 use Moose;
 use MooseX::Types::Moose qw( :all );
 use namespace::autoclean;
-with 'Search::GIN::Extract::ClassMap::Base';
+
+=head1 ROLES
+
+=head2 L<Search::GIN::Extract::ClassMap::Role>
+
+=cut
+
+with 'Search::GIN::Extract::ClassMap::Role';
+
+=head1 METHODS
+
+=head2 matches
+
+returns a list of extractors that are in the map for the object.
+
+=head3 signature: ->matches( $object )
+
+=head3 return: Search::GIN::Extract @items
+
+=cut
 
 sub matches {
   my ( $self, $object ) = @_;
-  return if not blessed $object;
+  my @m;
+  return @m if not blessed $object;
   for my $class ( $self->classmap_entries ) {
     if ( $object->does($class) ) {
-      return $self->classmap_get($class);
+      push @m, $self->classmap_get($class);
     }
   }
-  return;
+  return @m;
 }
 
 no Moose;
