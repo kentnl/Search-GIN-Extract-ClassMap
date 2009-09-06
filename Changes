@@ -3,6 +3,7 @@ Revision history for {{$dist->name}}
 {{$NEXT}}
           Added depend on 'aliased'
           Added [CompileTests]
+          Dropped manual load tests in favour of generated ones.
 
 0.01000604 2009-08-31 16:05:53 UTC
           First version.
