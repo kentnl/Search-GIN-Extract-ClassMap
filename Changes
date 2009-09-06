@@ -1,5 +1,11 @@
 Revision history for Search-GIN-Extract-ClassMap
 
+0.01001206 2009-09-06 18:00:57 UTC
+          Added depend on 'aliased'
+          Added [CompileTests]
+          Dropped manual load tests in favour of generated ones.
+          Start shipping dist.ini with builds because we really don't mind.
+
 0.01000604 2009-08-31 16:05:53 UTC
           First version.
 

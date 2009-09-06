@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Search::GIN::Extract::ClassMap::Role;
-our $VERSION = '0.01000604';
+our $VERSION = '0.01001206';
 
 
 # ABSTRACT: The ClassMap core role for generally representing all the user config.
@@ -51,7 +51,7 @@ Search::GIN::Extract::ClassMap::Role - The ClassMap core role for generally repr
 
 =head1 VERSION
 
-version 0.01000604
+version 0.01001206
 
 =head1 SYNOPSIS
 

@@ -2,7 +2,7 @@
 abstract: 'Delegate Extraction based on class.'
 author:
   - 'Kent Fredric <kentnl@cpan.org>'
-generated_by: 'Dist::Zilla::Plugin::MetaYAML version 1.092400'
+generated_by: 'Dist::Zilla::Plugin::MetaYAML version 1.092450'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -11,22 +11,22 @@ name: Search-GIN-Extract-ClassMap
 provides:
   Search::GIN::Extract::ClassMap:
     file: lib/Search/GIN/Extract/ClassMap.pm
-    version: 0.01000604
+    version: 0.01001206
   Search::GIN::Extract::ClassMap::Does:
     file: lib/Search/GIN/Extract/ClassMap/Does.pm
-    version: 0.01000604
+    version: 0.01001206
   Search::GIN::Extract::ClassMap::Isa:
     file: lib/Search/GIN/Extract/ClassMap/Isa.pm
-    version: 0.01000604
+    version: 0.01001206
   Search::GIN::Extract::ClassMap::Like:
     file: lib/Search/GIN/Extract/ClassMap/Like.pm
-    version: 0.01000604
+    version: 0.01001206
   Search::GIN::Extract::ClassMap::Role:
     file: lib/Search/GIN/Extract/ClassMap/Role.pm
-    version: 0.01000604
+    version: 0.01001206
   Search::GIN::Extract::ClassMap::Types:
     file: lib/Search/GIN/Extract/ClassMap/Types.pm
-    version: 0.01000604
+    version: 0.01001206
 requires:
   Moose: 0.89
   MooseX::AttributeHelpers: 0.21
@@ -34,7 +34,8 @@ requires:
   MooseX::Types::Moose: 0.19
   Search::GIN: 0.03
   Test::More: 0.92
+  aliased: 0.30
   namespace::autoclean: 0.08
 resources:
   repository: http://github.com/kentfredric/Search-GIN-Extract-ClassMap/tree
-version: 0.01000604
+version: 0.01001206

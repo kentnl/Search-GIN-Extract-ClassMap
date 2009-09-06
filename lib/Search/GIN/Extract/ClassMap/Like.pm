@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Search::GIN::Extract::ClassMap::Like;
-our $VERSION = '0.01000604';
+our $VERSION = '0.01001206';
 
 
 # ABSTRACT: Map Extractors based on what an object 'isa' or 'does'
@@ -43,7 +43,7 @@ Search::GIN::Extract::ClassMap::Like - Map Extractors based on what an object 'i
 
 =head1 VERSION
 
-version 0.01000604
+version 0.01001206
 
 =head1 ROLES
 

@@ -2,7 +2,7 @@ NAME
     Search::GIN::Extract::ClassMap - Delegate Extraction based on class.
 
 VERSION
-    version 0.01000604
+    version 0.01001206
 
 SYNOPSIS
       my $extractor = Search::GIN::Extract::ClassMap->new(

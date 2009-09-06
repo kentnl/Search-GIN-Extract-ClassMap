@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 package Search::GIN::Extract::ClassMap::Types;
-our $VERSION = '0.01000604';
+our $VERSION = '0.01001206';
 
 
 # ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercions.
@@ -92,7 +92,7 @@ Search::GIN::Extract::ClassMap::Types - Types for Search::GIN::Extract::ClassMap
 
 =head1 VERSION
 
-version 0.01000604
+version 0.01001206
 
 =head1 TYPES
 

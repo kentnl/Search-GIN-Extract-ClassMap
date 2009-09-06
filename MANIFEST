@@ -6,6 +6,7 @@ META.json
 META.yml
 Makefile.PL
 README
+dist.ini
 lib/Search/GIN/Extract/ClassMap.pm
 lib/Search/GIN/Extract/ClassMap/Does.pm
 lib/Search/GIN/Extract/ClassMap/Isa.pm
@@ -13,7 +14,7 @@ lib/Search/GIN/Extract/ClassMap/Like.pm
 lib/Search/GIN/Extract/ClassMap/Role.pm
 lib/Search/GIN/Extract/ClassMap/Types.pm
 perlcriticrc
-t/01-load.t
+t/00-compile.t
 t/02-Init.t
 t/author-critic.t
 t/author-kwalitee.t
