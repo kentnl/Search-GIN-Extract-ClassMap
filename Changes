@@ -1,5 +1,9 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+          Added depend on 'aliased'
+          Added [CompileTests]
+
+0.01000604 2009-08-31 16:05:53 UTC
           First version.
 
