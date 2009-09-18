@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 package Search::GIN::Extract::ClassMap::Isa;
-our $VERSION = '0.01001206';
+our $VERSION = '0.01002312';
 
 
 # ABSTRACT: Map Extractors based on what an object 'isa'
@@ -43,7 +43,7 @@ Search::GIN::Extract::ClassMap::Isa - Map Extractors based on what an object 'is
 
 =head1 VERSION
 
-version 0.01001206
+version 0.01002312
 
 =head1 ROLES
 

@@ -2,13 +2,12 @@ use strict;
 use warnings;
 
 package Search::GIN::Extract::ClassMap;
-our $VERSION = '0.01001206';
+our $VERSION = '0.01002312';
 
 
 # ABSTRACT: Delegate Extraction based on class.
 
-use Moose;
-use MooseX::AttributeHelpers;
+use Moose 0.90;
 use Search::GIN::Extract::ClassMap::Types qw( :all );
 use aliased 'Search::GIN::Extract::ClassMap::Isa'  => 'CMIsa';
 use aliased 'Search::GIN::Extract::ClassMap::Does' => 'CMDoes';
@@ -51,7 +50,7 @@ Search::GIN::Extract::ClassMap - Delegate Extraction based on class.
 
 =head1 VERSION
 
-version 0.01001206
+version 0.01002312
 
 =head1 SYNOPSIS
 

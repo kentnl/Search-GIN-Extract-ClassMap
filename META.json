@@ -7,7 +7,7 @@
       "version" : 1.4,
       "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html"
    },
-   "version" : "0.01001206",
+   "version" : "0.01002312",
    "name" : "Search-GIN-Extract-ClassMap",
    "author" : [
       "Kent Fredric <kentnl@cpan.org>"
@@ -15,39 +15,38 @@
    "license" : "perl",
    "provides" : {
       "Search::GIN::Extract::ClassMap::Types" : {
-         "version" : "0.01001206",
+         "version" : "0.01002312",
          "file" : "lib/Search/GIN/Extract/ClassMap/Types.pm"
       },
       "Search::GIN::Extract::ClassMap::Role" : {
-         "version" : "0.01001206",
+         "version" : "0.01002312",
          "file" : "lib/Search/GIN/Extract/ClassMap/Role.pm"
       },
       "Search::GIN::Extract::ClassMap" : {
-         "version" : "0.01001206",
+         "version" : "0.01002312",
          "file" : "lib/Search/GIN/Extract/ClassMap.pm"
       },
       "Search::GIN::Extract::ClassMap::Like" : {
-         "version" : "0.01001206",
+         "version" : "0.01002312",
          "file" : "lib/Search/GIN/Extract/ClassMap/Like.pm"
       },
       "Search::GIN::Extract::ClassMap::Isa" : {
-         "version" : "0.01001206",
+         "version" : "0.01002312",
          "file" : "lib/Search/GIN/Extract/ClassMap/Isa.pm"
       },
       "Search::GIN::Extract::ClassMap::Does" : {
-         "version" : "0.01001206",
+         "version" : "0.01002312",
          "file" : "lib/Search/GIN/Extract/ClassMap/Does.pm"
       }
    },
    "requires" : {
+      "Test::More" : "0.92",
       "MooseX::Types::Moose" : "0.19",
       "namespace::autoclean" : "0.08",
-      "aliased" : "0.30",
-      "Search::GIN" : "0.03",
-      "Test::More" : "0.92",
-      "MooseX::AttributeHelpers" : "0.21",
       "MooseX::Types" : "0.19",
-      "Moose" : "0.89"
+      "aliased" : "0.30",
+      "Moose" : "0.90",
+      "Search::GIN" : "0.03"
    },
    "abstract" : "Delegate Extraction based on class."
 }
