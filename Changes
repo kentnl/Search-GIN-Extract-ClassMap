@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+          Use Moose's Trait Attribute Helpers
 
 0.01001206 2009-09-06 18:00:57 UTC
           Added depend on 'aliased'

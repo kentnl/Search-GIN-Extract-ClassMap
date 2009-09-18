@@ -1,10 +1,11 @@
 use strict;
 use warnings;
+
 package Search::GIN::Extract::ClassMap::Role;
 
 # ABSTRACT: The ClassMap core role for generally representing all the user config.
 
-use Moose::Role;
+use Moose::Role 0.90;
 
 =head1 SYNOPSIS
 
@@ -44,10 +45,8 @@ Must take an object and return a list of L<Search::GIN::Extract> items to use fo
 requires 'matches';
 
 use MooseX::Types::Moose qw( :all );
-use MooseX::AttributeHelpers;
 use Search::GIN::Extract::ClassMap::Types qw( :all );
 use namespace::autoclean;
-
 
 =head1 ATTRIBUTES
 
@@ -72,15 +71,15 @@ This is a key => value pair set mapping classes to some Extractor to use for tha
 =cut
 
 has classmap => (
-  isa       => CoercedClassMap,
-  coerce    => 1,
-  is        => 'rw',
-  default   => sub { +{} },
-  metaclass => 'Collection::Hash',
-  provides  => {
-    keys => 'classmap_entries',
-    set  => 'classmap_set',
-    get  => 'classmap_get',
+  isa     => CoercedClassMap,
+  coerce  => 1,
+  is      => 'rw',
+  default => sub { +{} },
+  traits  => [qw( Hash )],
+  handles => {
+    'classmap_entries' => 'keys',
+    'classmap_set'     => 'set',
+    'classmap_get'     => 'get',
   },
 );
 
@@ -96,7 +95,7 @@ extracts values from all matching rules for the object
 
 sub extract_values {
   my ( $self, $object ) = @_;
-  return map { $_->extract_values( $object ) } $self->matches( $object );
+  return map { $_->extract_values($object) } $self->matches($object);
 }
 
 1;
