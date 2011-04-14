@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use Test::More tests                         => 6;
+use Test::More 0.96 tests                         => 6;
 use aliased 'Search::GIN::Extract::ClassMap' => 'CM';
 
 my $map = new_ok( CM,

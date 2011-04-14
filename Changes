@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ - Maintenance release.
+
  [Packaging]
  - Move to @Author::KENTNL
  - Stop shipping Makefile.PL
@@ -12,6 +14,13 @@ Revision history for {{$dist->name}}
 
  [Tests]
  - removed hand-coded critic/kwalitee tests.
+ - added report-versions-tiny
+ - added CPAN::Changes
+ - added DistMeta
+ - added EOL 
+ - added generated kwalitee
+ - added generated critic
+
 
 0.01002312 2009-09-18 00:54:27 UTC
           Use Moose's Trait Attribute Helpers
