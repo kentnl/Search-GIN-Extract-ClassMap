@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Packaging]
+ - Move to @Author::KENTNL
+
 0.01002312 2009-09-18 00:54:27 UTC
           Use Moose's Trait Attribute Helpers
 
