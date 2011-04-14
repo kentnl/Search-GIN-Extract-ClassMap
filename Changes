@@ -1,14 +1,56 @@
 Revision history for Search-GIN-Extract-ClassMap
 
-0.01002312 2009-09-18 00:54:27 UTC
-          Use Moose's Trait Attribute Helpers
+0.01060815 2011-04-14T03:32:21Z
+ - Maintenance release.
 
-0.01001206 2009-09-06 18:00:57 UTC
-          Added depend on 'aliased'
-          Added [CompileTests]
-          Dropped manual load tests in favour of generated ones.
-          Start shipping dist.ini with builds because we really don't mind.
+ [Dependencies]
+ - Test::More removed from Runtime deps
+ - Explicit dependency on Moose::Role added.
+ - Dropped dependency on Search::GIN
+ - Added Dependency on Search::GIN::Extract
+ - Added Dependency on Search::GIN::Extract::Attributes
+ - Added dependency on Search::GIN::Extract::Callback
 
-0.01000604 2009-08-31 16:05:53 UTC
-          First version.
+ [Dependencies:Build]
+ - Module::Build 0.3601 required for configure/build
+
+ [Dependencies:Devel]
+ - Now advertises @Author::KENTNL for development.
+
+ [Dependencies:Test]
+ - Test::More 0.96 is added to build deps.
+ - English is added to build deps
+ - File::Find is added to build deps
+ - File::Temp is added to build deps
+
+ [Documentation]
+ - Fixed a few POD spelling issues.
+
+ [Packaging]
+ - Move to @Author::KENTNL
+ - Stop shipping Makefile.PL
+ - perlcriticrc moved to perlcritic.rc and made more strict.
+ - add .gitignore.
+ - Changes reworked to CPAN::Changes form.
+
+ [Tests]
+ - removed hand-coded critic/kwalitee tests.
+ - added report-versions-tiny
+ - added CPAN::Changes
+ - added DistMeta
+ - added EOL
+ - added generated kwalitee
+ - added generated critic
+
+0.01002312 2009-09-18T00:54:27Z
+ - Use Moose's Trait Attribute Helpers
+
+0.01001206 2009-09-06T18:00:57Z
+ - Added depend on 'aliased'
+ - Added [CompileTests]
+ - Dropped manual load tests in favour of generated ones.
+ - Start shipping dist.ini with builds because we really don't mind.
+
+0.01000604 2009-08-31T16:05:53Z
+ - First version.
 

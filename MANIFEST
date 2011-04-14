@@ -4,7 +4,6 @@ LICENSE
 MANIFEST
 META.json
 META.yml
-Makefile.PL
 README
 dist.ini
 lib/Search/GIN/Extract/ClassMap.pm
@@ -13,11 +12,14 @@ lib/Search/GIN/Extract/ClassMap/Isa.pm
 lib/Search/GIN/Extract/ClassMap/Like.pm
 lib/Search/GIN/Extract/ClassMap/Role.pm
 lib/Search/GIN/Extract/ClassMap/Types.pm
-perlcriticrc
+perlcritic.rc
 t/00-compile.t
+t/000-report-versions-tiny.t
 t/02-Init.t
 t/author-critic.t
-t/author-kwalitee.t
-t/release-meta-yaml.t
+t/release-cpan-changes.t
+t/release-distmeta.t
+t/release-eol.t
+t/release-kwalitee.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t

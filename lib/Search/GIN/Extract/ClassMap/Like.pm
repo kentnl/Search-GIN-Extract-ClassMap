@@ -1,8 +1,9 @@
 use strict;
 use warnings;
 package Search::GIN::Extract::ClassMap::Like;
-our $VERSION = '0.01002312';
-
+BEGIN {
+  $Search::GIN::Extract::ClassMap::Like::VERSION = '0.01060815';
+}
 
 # ABSTRACT: Map Extractors based on what an object 'isa' or 'does'
 
@@ -34,7 +35,6 @@ __PACKAGE__->meta->make_immutable;
 
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -43,13 +43,11 @@ Search::GIN::Extract::ClassMap::Like - Map Extractors based on what an object 'i
 
 =head1 VERSION
 
-version 0.01002312
+version 0.01060815
 
 =head1 ROLES
 
 =head2 L<Search::GIN::Extract::ClassMap::Role>
-
-
 
 =head1 METHODS
 
@@ -61,19 +59,16 @@ returns a list of extractors that are in the map for the object.
 
 =head3 return: Search::GIN::Extract @items
 
-
-
 =head1 AUTHOR
 
-  Kent Fredric <kentnl@cpan.org>
+Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2009 by Kent Fredric.
+This software is copyright (c) 2011 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
-=cut 
-
+=cut
 

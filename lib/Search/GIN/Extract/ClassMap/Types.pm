@@ -2,8 +2,9 @@ use strict;
 use warnings;
 
 package Search::GIN::Extract::ClassMap::Types;
-our $VERSION = '0.01002312';
-
+BEGIN {
+  $Search::GIN::Extract::ClassMap::Types::VERSION = '0.01060815';
+}
 
 # ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercions.
 
@@ -83,7 +84,6 @@ coerce CoercedClassMap, from HashRef, via {
 
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -92,7 +92,7 @@ Search::GIN::Extract::ClassMap::Types - Types for Search::GIN::Extract::ClassMap
 
 =head1 VERSION
 
-version 0.01002312
+version 0.01060815
 
 =head1 TYPES
 
@@ -106,8 +106,6 @@ version 0.01002312
 
 =head4 HashRef
 
-
-
 =head2 DoesClassMap
 
 =head3 class_type
@@ -117,8 +115,6 @@ version 0.01002312
 =head3 COERCIONS
 
 =head4 HashRef
-
-
 
 =head2 LikeClassMap
 
@@ -130,11 +126,9 @@ version 0.01002312
 
 =head4 HashRef
 
-
-
 =head2 Extractor
 
-Mostly here to idenify things that derive from L<Search::GIN::Extract>
+Mostly here to identify things that derive from L<Search::GIN::Extract>
 
 =head3 subtype
 
@@ -150,11 +144,9 @@ Coerces into a L<Search::GIN::Extract::Attributes> instance.
 
 Coerces into a L<Search::GIN::Extract::Callback> instance.
 
-
-
 =head2 CoercedClassMap
 
-This is here to implement a ( somewhat hackish ) semi-deep recurisive coercion.
+This is here to implement a ( somewhat hackish ) semi-deep recursive coercion.
 
 Ensures all keys are of type L</Extractor> in order to be a valid hashref,
 and applies L</Extractor>'s coercions where possible.
@@ -167,19 +159,16 @@ and applies L</Extractor>'s coercions where possible.
 
 =head4 HashRef
 
-
-
 =head1 AUTHOR
 
-  Kent Fredric <kentnl@cpan.org>
+Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2009 by Kent Fredric.
+This software is copyright (c) 2011 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
-=cut 
-
+=cut
 
