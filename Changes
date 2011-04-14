@@ -4,6 +4,9 @@ Revision history for {{$dist->name}}
  [Packaging]
  - Move to @Author::KENTNL
 
+ [Tests]
+ - removed hand-coded critic/kwalitee tests.
+
 0.01002312 2009-09-18 00:54:27 UTC
           Use Moose's Trait Attribute Helpers
 
