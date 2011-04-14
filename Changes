@@ -3,6 +3,8 @@ Revision history for {{$dist->name}}
 {{$NEXT}}
  [Packaging]
  - Move to @Author::KENTNL
+ - Stop shipping Makefile.PL
+
 
  [Tests]
  - removed hand-coded critic/kwalitee tests.
