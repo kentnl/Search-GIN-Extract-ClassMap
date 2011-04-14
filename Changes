@@ -9,6 +9,26 @@ Revision history for {{$dist->name}}
  - perlcriticrc moved to perlcritic.rc and made more strict.
  - add .gitignore.
  
+ [Dependencies]
+ - Test::More removed from Runtime deps
+ - Explicit dependency on Moose::Role added. 
+ - Dropped dependency on Search::GIN
+ - Added Dependency on Search::GIN::Extract
+ - Added Dependency on Search::GIN::Extract::Attributes
+ - Added dependency on Search::GIN::Extract::Callback
+
+ [Dependencies:Test]
+ - Test::More 0.96 is added to build deps.
+ - English is added to build deps
+ - File::Find is added to build deps
+ - File::Temp is added to build deps
+
+ [Dependencies:Devel]
+ - Now advertises @Author::KENTNL for development.
+
+ [Dependencies:Build]
+ - Module::Build 0.3601 required for configure/build
+
  [Documentation]
  - Fixed a few POD spelling issues.
 
