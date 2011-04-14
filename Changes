@@ -4,7 +4,7 @@ Revision history for {{$dist->name}}
  [Packaging]
  - Move to @Author::KENTNL
  - Stop shipping Makefile.PL
-
+ - perlcriticrc moved to perlcritic.rc and made more strict.
 
  [Tests]
  - removed hand-coded critic/kwalitee tests.
