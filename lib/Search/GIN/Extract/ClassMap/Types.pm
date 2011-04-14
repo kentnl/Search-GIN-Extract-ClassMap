@@ -76,7 +76,7 @@ coerce LikeClassMap, from HashRef, via {
 
 =head2 Extractor
 
-Mostly here to idenify things that derive from L<Search::GIN::Extract>
+Mostly here to identify things that derive from L<Search::GIN::Extract>
 
 =head3 subtype
 
@@ -111,7 +111,7 @@ coerce Extractor, from CodeRef, via {
 
 =head2 CoercedClassMap
 
-This is here to implement a ( somewhat hackish ) semi-deep recurisive coercion.
+This is here to implement a ( somewhat hackish ) semi-deep recursive coercion.
 
 Ensures all keys are of type L</Extractor> in order to be a valid hashref,
 and applies L</Extractor>'s coercions where possible.

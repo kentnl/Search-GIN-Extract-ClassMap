@@ -98,5 +98,7 @@ sub extract_values {
   return map { $_->extract_values($object) } $self->matches($object);
 }
 
+no Moose::Role;
+
 1;
 

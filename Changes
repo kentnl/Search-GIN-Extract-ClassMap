@@ -5,6 +5,9 @@ Revision history for {{$dist->name}}
  - Move to @Author::KENTNL
  - Stop shipping Makefile.PL
  - perlcriticrc moved to perlcritic.rc and made more strict.
+ 
+ [Documentation]
+ - Fixed a few POD spelling issues.
 
  [Tests]
  - removed hand-coded critic/kwalitee tests.
