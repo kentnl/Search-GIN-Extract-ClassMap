@@ -6,7 +6,7 @@ BEGIN {
   $Search::GIN::Extract::ClassMap::Role::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Search::GIN::Extract::ClassMap::Role::VERSION = '0.01060816';
+  $Search::GIN::Extract::ClassMap::Role::VERSION = '0.01060817';
 }
 
 # ABSTRACT: The ClassMap core role for generally representing all the user config.
@@ -55,7 +55,7 @@ Search::GIN::Extract::ClassMap::Role - The ClassMap core role for generally repr
 
 =head1 VERSION
 
-version 0.01060816
+version 0.01060817
 
 =head1 SYNOPSIS
 

@@ -6,7 +6,7 @@ BEGIN {
   $Search::GIN::Extract::ClassMap::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Search::GIN::Extract::ClassMap::VERSION = '0.01060816';
+  $Search::GIN::Extract::ClassMap::VERSION = '0.01060817';
 }
 
 # ABSTRACT: Delegate Extraction based on class.
@@ -53,7 +53,7 @@ Search::GIN::Extract::ClassMap - Delegate Extraction based on class.
 
 =head1 VERSION
 
-version 0.01060816
+version 0.01060817
 
 =head1 SYNOPSIS
 

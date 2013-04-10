@@ -17,7 +17,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Search-GIN-Extract-ClassMap",
-  "dist_version" => "0.01060816",
+  "dist_version" => "0.01060817",
   "license" => "perl",
   "module_name" => "Search::GIN::Extract::ClassMap",
   "recommends" => {},

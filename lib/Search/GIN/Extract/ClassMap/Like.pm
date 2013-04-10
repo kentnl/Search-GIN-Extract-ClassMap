@@ -5,7 +5,7 @@ BEGIN {
   $Search::GIN::Extract::ClassMap::Like::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Search::GIN::Extract::ClassMap::Like::VERSION = '0.01060816';
+  $Search::GIN::Extract::ClassMap::Like::VERSION = '0.01060817';
 }
 
 # ABSTRACT: Map Extractors based on what an object 'isa' or 'does'
@@ -46,7 +46,7 @@ Search::GIN::Extract::ClassMap::Like - Map Extractors based on what an object 'i
 
 =head1 VERSION
 
-version 0.01060816
+version 0.01060817
 
 =head1 ROLES
 

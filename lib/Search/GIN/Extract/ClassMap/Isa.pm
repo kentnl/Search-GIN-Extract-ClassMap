@@ -6,7 +6,7 @@ BEGIN {
   $Search::GIN::Extract::ClassMap::Isa::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Search::GIN::Extract::ClassMap::Isa::VERSION = '0.01060816';
+  $Search::GIN::Extract::ClassMap::Isa::VERSION = '0.01060817';
 }
 
 # ABSTRACT: Map Extractors based on what an object 'isa'
@@ -46,7 +46,7 @@ Search::GIN::Extract::ClassMap::Isa - Map Extractors based on what an object 'is
 
 =head1 VERSION
 
-version 0.01060816
+version 0.01060817
 
 =head1 ROLES
 

@@ -6,7 +6,7 @@ BEGIN {
   $Search::GIN::Extract::ClassMap::Types::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Search::GIN::Extract::ClassMap::Types::VERSION = '0.01060816';
+  $Search::GIN::Extract::ClassMap::Types::VERSION = '0.01060817';
 }
 
 # ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercions.
@@ -95,7 +95,7 @@ Search::GIN::Extract::ClassMap::Types - Types for Search::GIN::Extract::ClassMap
 
 =head1 VERSION
 
-version 0.01060816
+version 0.01060817
 
 =head1 TYPES
 
