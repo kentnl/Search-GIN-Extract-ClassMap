@@ -3,7 +3,10 @@ use warnings;
 
 package Search::GIN::Extract::ClassMap;
 BEGIN {
-  $Search::GIN::Extract::ClassMap::VERSION = '0.01060815';
+  $Search::GIN::Extract::ClassMap::AUTHORITY = 'cpan:KENTNL';
+}
+{
+  $Search::GIN::Extract::ClassMap::VERSION = '0.01060816';
 }
 
 # ABSTRACT: Delegate Extraction based on class.
@@ -50,7 +53,7 @@ Search::GIN::Extract::ClassMap - Delegate Extraction based on class.
 
 =head1 VERSION
 
-version 0.01060815
+version 0.01060816
 
 =head1 SYNOPSIS
 
@@ -155,7 +158,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Kent Fredric.
+This software is copyright (c) 2012 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

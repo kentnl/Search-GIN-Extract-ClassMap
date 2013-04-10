@@ -3,7 +3,10 @@ use warnings;
 
 package Search::GIN::Extract::ClassMap::Types;
 BEGIN {
-  $Search::GIN::Extract::ClassMap::Types::VERSION = '0.01060815';
+  $Search::GIN::Extract::ClassMap::Types::AUTHORITY = 'cpan:KENTNL';
+}
+{
+  $Search::GIN::Extract::ClassMap::Types::VERSION = '0.01060816';
 }
 
 # ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercions.
@@ -92,7 +95,7 @@ Search::GIN::Extract::ClassMap::Types - Types for Search::GIN::Extract::ClassMap
 
 =head1 VERSION
 
-version 0.01060815
+version 0.01060816
 
 =head1 TYPES
 
@@ -165,7 +168,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Kent Fredric.
+This software is copyright (c) 2012 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
