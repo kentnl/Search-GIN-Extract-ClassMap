@@ -1,19 +1,51 @@
 ﻿Revision history for Search-GIN-Extract-ClassMap
 
+0.01060817 2013-04-10T06:25:04Z
+ [Dependencies::Added / develop requires]
+ - Pod::Coverage::TrustPod
+ - Test::CPAN::Meta
+ - Test::Pod 1.41
+ - Test::Pod::Coverage 1.08
+ - version 0.9901
+
+ [Dependencies::Changed / build requires]
+ - Module::Build 0.3601 → 0.4004
+
+ [Dependencies::Changed / configure requires]
+ - Module::Build 0.3601 → 0.4004
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.3.0 → v1.7.2
+
+ [Dependencies::Changed / test requires]
+ - Test::More 0.96 → 0.98
+
+ [Documentation]
+ - Update copyright year
+ - Add README.mkdn
+
+ [Meta]
+ - Bug tracker to github issues
+
+ [Packaging]
+ - Utilise test_requires in Build.PL
+
 0.01060816 2012-03-13T06:22:02Z
  - Maintenance Release
 
- [Dependencies::Changed]
- - develop suggests : Dist::Zilla::PluginBundle::Author::KENTNL
-   v1.0.0 -> v1.2.0
+ [Dependencies::Added / runtime requires]
+ - perl 5.006
+ - strict
+ - warnings
 
- [Dependencies::New]
- - runtime requires : perl 5.006
- - runtime requires : strict
- - runtime requires : warnings
+ [Dependencies::Changed / develop recommends]
+ - Dist::Zilla::PluginBundle::Author::KENTNL::Lite 0.01009803 → v1.3.0
 
- [Dependencies::Removed]
- - test requires : English
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.0.0 → v1.3.0
+
+ [Dependencies::Removed / test requires]
+ - English
 
  [Internals]
  - Move $VERSION declarations out of BEGIN
