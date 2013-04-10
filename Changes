@@ -1,6 +1,6 @@
 ﻿Revision history for Search-GIN-Extract-ClassMap
 
-0.01060817 2013-04-10T06:23:53Z
+0.01060817 2013-04-10T06:24:23Z
  [Dependencies::Added / develop requires]
  - Pod::Coverage::TrustPod
  - Test::CPAN::Meta
