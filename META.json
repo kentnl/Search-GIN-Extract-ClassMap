@@ -152,13 +152,13 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/kentfredric/Search-GIN-Extract-ClassMap/issues"
+         "web" : "https://github.com/kentnl/Search-GIN-Extract-ClassMap/issues"
       },
-      "homepage" : "https://github.com/kentfredric/Search-GIN-Extract-ClassMap",
+      "homepage" : "https://github.com/kentnl/Search-GIN-Extract-ClassMap",
       "repository" : {
          "type" : "git",
-         "url" : "https://github.com/kentfredric/Search-GIN-Extract-ClassMap.git",
-         "web" : "https://github.com/kentfredric/Search-GIN-Extract-ClassMap"
+         "url" : "https://github.com/kentnl/Search-GIN-Extract-ClassMap.git",
+         "web" : "https://github.com/kentnl/Search-GIN-Extract-ClassMap"
       }
    },
    "version" : "0.01060818",

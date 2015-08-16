@@ -1,12 +1,17 @@
+; vim: syntax=dosini
 name    = Search-GIN-Extract-ClassMap
 author  = Kent Fredric <kentnl@cpan.org>
 license = Perl_5
-copyright_holder = Kent Fredric
+copyright_holder = Kent Fredric <kentfredric@gmail.com>
 
 [@Author::KENTNL]
 git_versions  = 1
 normal_form   = numify
 mantissa      = 8
+srcreadme     = mkdn
+
+;twitter_extra_hash_tags = #
+
 ;version_major  = 0
 ;version_minor  = 1
 ;version_rel_year = 2009
@@ -14,7 +19,6 @@ mantissa      = 8
 ;version_rel_day = 26
 ;version_rel_hour = 00
 ;version_rel_time_zone = Pacific/Auckland
-twitter_hash_tags = #perl #cpan
 
 [Prereqs]
 ;Moose = 0.90

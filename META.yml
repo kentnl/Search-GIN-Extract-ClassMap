@@ -53,7 +53,7 @@ requires:
   strict: '0'
   warnings: '0'
 resources:
-  bugtracker: https://github.com/kentfredric/Search-GIN-Extract-ClassMap/issues
-  homepage: https://github.com/kentfredric/Search-GIN-Extract-ClassMap
-  repository: https://github.com/kentfredric/Search-GIN-Extract-ClassMap.git
+  bugtracker: https://github.com/kentnl/Search-GIN-Extract-ClassMap/issues
+  homepage: https://github.com/kentnl/Search-GIN-Extract-ClassMap
+  repository: https://github.com/kentnl/Search-GIN-Extract-ClassMap.git
 version: '0.01060818'
