@@ -44,7 +44,35 @@ with qw(  Search::GIN::Extract );
 
 
 
-has 'extract_isa'  => ( 'isa', IsaClassMap,  'is', 'rw', 'coerce', 1, default => sub { CMIsa->new() } );
+has 'extract_isa' => ( 'isa', IsaClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMIsa->new() } );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+has 'extract_does' => ( 'isa', DoesClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMDoes->new() } );
 
 
 
@@ -75,37 +103,10 @@ has 'extract_isa'  => ( 'isa', IsaClassMap,  'is', 'rw', 'coerce', 1, default =>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-has 'extract'      => ( 'isa', LikeClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMLike->new() } );
+has 'extract' => ( 'isa', LikeClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMLike->new() } );
 
 no Moose;
 __PACKAGE__->meta->make_immutable;
-
 
 
 
@@ -247,8 +248,6 @@ HashRef's are automatically type-cast.
 
 =back
 
-has 'extract_does' => ( 'isa', DoesClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMDoes->new() } );
-
 =head2 C<extract>
 
   my $object =  Search::GIN::Extract::ClassMap->new(
@@ -272,6 +271,8 @@ this doesn't make complete sense, but its handy for lazy people.
 =item L<< C<::ClassMap::Like>|Search::GIN::Extract::ClassMap::Like >>
 
 HashRef's are automatically type-cast.
+
+=back
 
 =head1 AUTHOR
 
