@@ -199,11 +199,11 @@ or the objects composed roles.
 This essentially permits you to register adapters for various object types to
 special-case their extraction.
 
-For example, if you had a codebase that used classes under your control using
-C<MooseX::AttributeIndexes>, you could easily default those classes to extract
-using C<Search::GIN::Extract::AttributeIndexes>. And if any objects of those
-classes had C<DateTime> properties, you could define a handler for extracting
-C<DateTime> meta-data for indexing specifically.
+For example, if you had a source tree that used classes under your control
+using C<MooseX::AttributeIndexes>, you could easily default those classes to
+extract using C<Search::GIN::Extract::AttributeIndexes>. And if any objects of
+those classes had C<DateTime> properties, you could define a handler for
+extracting C<DateTime> meta-data for indexing specifically.
 
 =head1 METHODS
 
