@@ -248,7 +248,7 @@ C<HashRef>'s are automatically type-cast.
   my $object =  Search::GIN::Extract::ClassMap->new(
     extract_does => $does_thing
   );
-  # or 
+  # or
   $object->extract_does( $does_thing );
 
 Applied on all objects where $object->does( $classname );
@@ -272,7 +272,7 @@ C<HashRef>'s are automatically type-cast.
   my $object =  Search::GIN::Extract::ClassMap->new(
     extract => $like_thing
   );
-  # or 
+  # or
   $object->extract( $like_thing );
 
 Applied on all objects where $object->does( $classname ) OR $object->isa( $classname );

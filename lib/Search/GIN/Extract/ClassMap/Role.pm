@@ -162,7 +162,7 @@ version 1.000000
 
   my ( @extractors ) = $item->matches( $extractee )
 
-Must take an object and return a list of 
+Must take an object and return a list of
 L<< C<Search::GIN::Extract>|Search::GIN::Extract >> items to use for it.
 
   for my $extractor ( @extractors ) {
@@ -212,7 +212,7 @@ extracts values from all matching rules for the object
 
 This is a key => value pair set mapping classes to some Extractor to use for that class
 
-  $item->classmap_entries # class names / keys 
+  $item->classmap_entries # class names / keys
 
   $item->classmap_set( $classname, $handler );
 
