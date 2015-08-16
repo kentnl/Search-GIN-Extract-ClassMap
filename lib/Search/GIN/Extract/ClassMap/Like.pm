@@ -57,7 +57,7 @@ Search::GIN::Extract::ClassMap::Like - Map Extractors based on what an objects i
 
 =head1 VERSION
 
-version 0.010608
+version 1.000000
 
 =head1 METHODS
 

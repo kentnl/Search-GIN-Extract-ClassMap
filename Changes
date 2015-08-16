@@ -1,6 +1,6 @@
 ﻿Revision history for Search-GIN-Extract-ClassMap
 
-0.010608 2015-08-16T07:04:47Z 322476e
+1.000000 2015-08-16T07:04:47Z 322476e
  [Dependencies::Stats]
  - Dependencies changed since 0.01060817, see misc/*.deps* for details
  - build: ↑1

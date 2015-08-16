@@ -166,7 +166,7 @@ Search::GIN::Extract::ClassMap::Types - Types for Search::GIN::Extract::ClassMap
 
 =head1 VERSION
 
-version 0.010608
+version 1.000000
 
 =head1 TYPES
 

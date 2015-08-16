@@ -133,7 +133,7 @@ Search::GIN::Extract::ClassMap::Role - A base role for maps containing classes a
 
 =head1 VERSION
 
-version 0.010608
+version 1.000000
 
 =head1 SYNOPSIS
 
