@@ -1,2 +1,4 @@
-.build
-Search-GIN-Extract-ClassMap-*
+/.build
+/Search-GIN-Extract-ClassMap-*
+/tmp/
+
