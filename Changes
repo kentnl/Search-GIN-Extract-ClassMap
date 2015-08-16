@@ -1,6 +1,8 @@
 ﻿Revision history for Search-GIN-Extract-ClassMap
 
 1.000001 2015-08-16T07:53:06Z b107b29
+ [Documentation Fix]
+ - Don't you hate it when you find yourself short of a colon?
 
 1.000000 2015-08-16T07:38:09Z 5020828
  [01 - Version Scheme]

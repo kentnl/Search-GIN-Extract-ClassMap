@@ -220,7 +220,7 @@ This is a key => value pair set mapping classes to some Extractor to use for tha
 
 =over 4
 
-=item C<isa>: L<< C<CoercedClassMap>|Search::Extract::ClassMap:Types/CoercedClassMap >>
+=item C<isa>: L<< C<CoercedClassMap>|Search::Extract::ClassMap::Types/CoercedClassMap >>
 
 =item C<coerce>: C<< B<True> >>
 
