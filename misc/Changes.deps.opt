@@ -1,6 +1,11 @@
 This file contains changes in OPTIONAL dependencies for standard CPAN phases (configure/build/runtime/test)
 
 0.01060818
+ [Added / runtime recommends]
+ - Moose 2.000
+
+ [Added / test recommends]
+ - CPAN::Meta 2.120900
 
 0.01060817 2013-04-10T06:25:04Z
 
