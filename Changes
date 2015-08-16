@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.000001 2015-08-16T08:00:25Z 1ed7610
  [Documentation Fix]
  - Don't you hate it when you find yourself short of a colon?
 
