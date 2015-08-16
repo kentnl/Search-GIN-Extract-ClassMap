@@ -6,7 +6,7 @@ package Search::GIN::Extract::ClassMap::Role;
 
 # ABSTRACT: A base role for maps containing classes and associated handlers.
 
-our $VERSION = '1.000002';
+our $VERSION = '1.000003';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -133,7 +133,7 @@ Search::GIN::Extract::ClassMap::Role - A base role for maps containing classes a
 
 =head1 VERSION
 
-version 1.000002
+version 1.000003
 
 =head1 SYNOPSIS
 

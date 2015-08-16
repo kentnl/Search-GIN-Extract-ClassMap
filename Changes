@@ -1,5 +1,7 @@
 ﻿Revision history for Search-GIN-Extract-ClassMap
 
+1.000003 2015-08-16T08:10:20Z 59b69ca
+
 1.000002 2015-08-16T08:09:03Z 7e56737
  [Documentation]
  - Turns out I suck at L<>, and this release hopefully finally has all the L<> links fixed.

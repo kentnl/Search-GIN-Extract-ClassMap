@@ -6,7 +6,7 @@ package Search::GIN::Extract::ClassMap::Types;
 
 # ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercing.
 
-our $VERSION = '1.000002';
+our $VERSION = '1.000003';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -166,7 +166,7 @@ Search::GIN::Extract::ClassMap::Types - Types for Search::GIN::Extract::ClassMap
 
 =head1 VERSION
 
-version 1.000002
+version 1.000003
 
 =head1 TYPES
 
