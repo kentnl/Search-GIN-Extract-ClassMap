@@ -16,7 +16,7 @@ use MooseX::Types -declare => [
     LikeClassMap
     Extractor
     CoercedClassMap
-    ]
+  ],
 ];
 
 
@@ -102,7 +102,7 @@ subtype Extractor, as Object, where {
 
 coerce Extractor, from ArrayRef [Str], via {
   require Search::GIN::Extract::Attributes;
-  Search::GIN::Extract::Attributes->new( attributes => $_ )
+  Search::GIN::Extract::Attributes->new( attributes => $_ );
 
 };
 coerce Extractor, from CodeRef, via {
