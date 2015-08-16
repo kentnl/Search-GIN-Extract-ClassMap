@@ -189,6 +189,22 @@ automatically.
 
 This is an early release, C<API> is prone to change without much warning, but best attempts will be made to avoid the need.
 
+=head1 DESCRIPTION
+
+This module is an extension for the L<< C<Search::GIN>|Search::GIN >> framework
+providing a novel way to dictate which attribute extraction techniques will be
+used for which object by having rules that map against the objects inheritance
+or the objects composed roles.
+
+This essentially permits you to register adapters for various object types to
+special-case their extraction.
+
+For example, if you had a codebase that used classes under your control using
+C<MooseX::AttributeIndexes>, you could easily default those classes to extract
+using C<Search::GIN::Extract::AttributeIndexes>. And if any objects of those
+classes had C<DateTime> properties, you could define a handler for extracting
+C<DateTime> meta-data for indexing specifically.
+
 =head1 METHODS
 
 =head2 C<extract_values>
