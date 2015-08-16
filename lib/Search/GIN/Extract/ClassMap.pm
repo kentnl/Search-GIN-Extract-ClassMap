@@ -15,15 +15,16 @@ use aliased 'Search::GIN::Extract::ClassMap::Does' => 'CMDoes';
 use aliased 'Search::GIN::Extract::ClassMap::Like' => 'CMLike';
 use namespace::autoclean;
 
+with qw(  Search::GIN::Extract );
 
 
 
 
 
 
-with qw(
-  Search::GIN::Extract
-);
+
+
+
 
 
 
@@ -154,25 +155,31 @@ automatically.
 
 This is an early release, API is prone to change without much warning, but best attempts will be made to avoid the need.
 
-=head1 ROLES
-
-=head2 L<Search::GIN::Extract>
-
 =head1 ATTRIBUTES
 
-=head2 extract_isa
+=head2 C<extract_isa>
+
+  my $object = Search::GIN::Extract::ClassMap->new(
+    extract_isa => $isa_thing
+  );
+  # or
+  $object->extract_isa( $isa_thing )
 
 Applied on all objects where $object->isa( $classname );
 
-=head3 types:
+=head3 C<$isa_thing>
 
-=head4 HashRef[ L<Search::GIN::Extract::ClassMap::Types/Extractor> ] ->
+=over 4
 
-=head4 L<Search::GIN::Extract::ClassMap::Types/CoercedClassMap> ->
+=item C<< HashRef[ L<< C<Extractor>|Search::GIN::Extract::ClassMap::Types/Extractor >> ] >>
 
-=head4 L<Search::GIN::Extract::ClassMap::Isa>
+=item L<< C<CoercedClassMap>|Search::GIN::Extract::ClassMap::Types/CoercedClassMap >>
+
+=item L<< C<::ClassMap::Isa>|Search::GIN::Extract::ClassMap::Isa >>
 
 HashRef's are automatically type-cast.
+
+=back
 
 =head2 extract_does
 
