@@ -6,7 +6,7 @@ package Search::GIN::Extract::ClassMap::Does;
 
 # ABSTRACT: Map Extractors based on an objects roles.
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -57,7 +57,7 @@ Search::GIN::Extract::ClassMap::Does - Map Extractors based on an objects roles.
 
 =head1 VERSION
 
-version 1.000001
+version 1.000002
 
 =head1 METHODS
 
