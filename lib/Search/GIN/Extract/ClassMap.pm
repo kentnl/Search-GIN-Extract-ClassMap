@@ -171,7 +171,7 @@ Applied on all objects where $object->isa( $classname );
 
 =over 4
 
-=item C<< HashRef[ L<< C<Extractor>|Search::GIN::Extract::ClassMap::Types/Extractor >> ] >>
+=item C<< HashRef[ L<Extractor|Search::GIN::Extract::ClassMap::Types/Extractor> ] >>
 
 =item L<< C<CoercedClassMap>|Search::GIN::Extract::ClassMap::Types/CoercedClassMap >>
 
