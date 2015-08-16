@@ -44,42 +44,72 @@ with qw(  Search::GIN::Extract );
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 has 'extract_isa'  => ( 'isa', IsaClassMap,  'is', 'rw', 'coerce', 1, default => sub { CMIsa->new() } );
-has 'extract_does' => ( 'isa', DoesClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMDoes->new() } );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 has 'extract'      => ( 'isa', LikeClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMLike->new() } );
 
 no Moose;
 __PACKAGE__->meta->make_immutable;
+
+
+
+
+
 
 
 
@@ -155,6 +185,18 @@ automatically.
 
 This is an early release, API is prone to change without much warning, but best attempts will be made to avoid the need.
 
+=head1 METHODS
+
+=head2 C<extract_values>
+
+  my ( @values ) = $object->extract_values( $extractee );
+
+B<for:> L<Search::GIN::Extract>
+
+Iterates the contents of the C<< extract($|_\w+$) >> rules, and asks them to
+extract their respective information, and returns the resulting results as a
+list.
+
 =head1 ATTRIBUTES
 
 =head2 C<extract_isa>
@@ -181,41 +223,55 @@ HashRef's are automatically type-cast.
 
 =back
 
-=head2 extract_does
+=head2 C<extract_does>
+
+  my $object =  Search::GIN::Extract::ClassMap->new(
+    extract_does => $does_thing
+  );
+  # or 
+  $object->extract_does( $does_thing );
 
 Applied on all objects where $object->does( $classname );
 
-=head3 types:
+=head3 C<$does_thing>
 
-=head4 HashRef[ L<Search::GIN::Extract::ClassMap::Types/Extractor> ] ->
+=over 4
 
-=head4 L<Search::GIN::Extract::ClassMap::Types/CoercedClassMap> ->
+=item C<< HashRef[ L<Extractor|Search::GIN::Extract::ClassMap::Types/Extractor> ] >>
 
-=head4 L<Search::GIN::Extract::ClassMap::Does>
+=head4 L<< C<CoercedClassMap>|Search::GIN::Extract::ClassMap::Types/CoercedClassMap >>
+
+=head4 L<< C<::ClassMap::Does>|Search::GIN::Extract::ClassMap::Does >>
 
 HashRef's are automatically type-cast.
 
-=head2 extract_does
+=back
+
+has 'extract_does' => ( 'isa', DoesClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMDoes->new() } );
+
+=head2 C<extract>
+
+  my $object =  Search::GIN::Extract::ClassMap->new(
+    extract => $like_thing
+  );
+  # or 
+  $object->extract( $like_thing );
 
 Applied on all objects where $object->does( $classname ) OR $object->isa( $classname );
 
 this doesn't make complete sense, but its handy for lazy people.
 
-=head3 types:
+=head3 C<$like_thing>
 
-=head4 HashRef[ L<Search::GIN::Extract::ClassMap::Types/Extractor> ]
+=over 4
 
-=head4 L<Search::GIN::Extract::ClassMap::Types/CoercedClassMap> ->
+=item C<< HashRef[ L<Extractor|Search::GIN::Extract::ClassMap::Types/Extractor> ] >>
 
-=head4 L<Search::GIN::Extract::ClassMap::Like>
+=item L<< C<CoercedClassMap>|Search::GIN::Extract::ClassMap::Types/CoercedClassMap >>
+
+=item L<< C<::ClassMap::Like>|Search::GIN::Extract::ClassMap::Like >>
 
 HashRef's are automatically type-cast.
-
-=head1 METHODS
-
-=head2 extract_values
-
-=head3 for: L<Search::GIN::Extract>
 
 =head1 AUTHOR
 
