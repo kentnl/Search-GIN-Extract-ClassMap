@@ -3,8 +3,10 @@ use strict;
 use warnings;
 
 package Search::GIN::Extract::ClassMap::Like;
-$Search::GIN::Extract::ClassMap::Like::VERSION = '0.01060818';
+
 # ABSTRACT: Map Extractors based on what an objects inheritance or roles
+
+our $VERSION = '1.000000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -55,7 +57,7 @@ Search::GIN::Extract::ClassMap::Like - Map Extractors based on what an objects i
 
 =head1 VERSION
 
-version 0.01060818
+version 0.010608
 
 =head1 METHODS
 

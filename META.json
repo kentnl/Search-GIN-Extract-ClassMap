@@ -126,27 +126,27 @@
    "provides" : {
       "Search::GIN::Extract::ClassMap" : {
          "file" : "lib/Search/GIN/Extract/ClassMap.pm",
-         "version" : "0.01060818"
+         "version" : "0.010608"
       },
       "Search::GIN::Extract::ClassMap::Does" : {
          "file" : "lib/Search/GIN/Extract/ClassMap/Does.pm",
-         "version" : "0.01060818"
+         "version" : "0.010608"
       },
       "Search::GIN::Extract::ClassMap::Isa" : {
          "file" : "lib/Search/GIN/Extract/ClassMap/Isa.pm",
-         "version" : "0.01060818"
+         "version" : "0.010608"
       },
       "Search::GIN::Extract::ClassMap::Like" : {
          "file" : "lib/Search/GIN/Extract/ClassMap/Like.pm",
-         "version" : "0.01060818"
+         "version" : "0.010608"
       },
       "Search::GIN::Extract::ClassMap::Role" : {
          "file" : "lib/Search/GIN/Extract/ClassMap/Role.pm",
-         "version" : "0.01060818"
+         "version" : "0.010608"
       },
       "Search::GIN::Extract::ClassMap::Types" : {
          "file" : "lib/Search/GIN/Extract/ClassMap/Types.pm",
-         "version" : "0.01060818"
+         "version" : "0.010608"
       }
    },
    "release_status" : "stable",
@@ -161,7 +161,7 @@
          "web" : "https://github.com/kentnl/Search-GIN-Extract-ClassMap"
       }
    },
-   "version" : "0.01060818",
+   "version" : "0.010608",
    "x_BuiltWith" : {
       "external_file" : "misc/built_with.json"
    },
@@ -182,7 +182,7 @@
                   "repo_root" : "."
                },
                "Dist::Zilla::Role::Version::Sanitize" : {
-                  "mantissa" : "8",
+                  "mantissa" : "6",
                   "normal_form" : "numify"
                }
             },
@@ -667,7 +667,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.01060818-source",
+                  "tag" : "0.010608-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -738,7 +738,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "0.01060818",
+                  "tag" : "0.010608",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"

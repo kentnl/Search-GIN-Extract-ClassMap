@@ -7,7 +7,7 @@ copyright_holder = Kent Fredric <kentfredric@gmail.com>
 [@Author::KENTNL]
 git_versions  = 1
 normal_form   = numify
-mantissa      = 8
+mantissa      = 6
 srcreadme     = mkdn
 
 ;twitter_extra_hash_tags = #

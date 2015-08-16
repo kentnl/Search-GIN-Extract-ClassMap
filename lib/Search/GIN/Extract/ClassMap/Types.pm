@@ -3,8 +3,10 @@ use strict;
 use warnings;
 
 package Search::GIN::Extract::ClassMap::Types;
-$Search::GIN::Extract::ClassMap::Types::VERSION = '0.01060818';
+
 # ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercing.
+
+our $VERSION = '1.000000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -164,7 +166,7 @@ Search::GIN::Extract::ClassMap::Types - Types for Search::GIN::Extract::ClassMap
 
 =head1 VERSION
 
-version 0.01060818
+version 0.010608
 
 =head1 TYPES
 

@@ -3,8 +3,10 @@ use strict;
 use warnings;
 
 package Search::GIN::Extract::ClassMap::Role;
-$Search::GIN::Extract::ClassMap::Role::VERSION = '0.01060818';
+
 # ABSTRACT: A base role for maps containing classes and associated handlers.
+
+our $VERSION = '1.000000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -131,7 +133,7 @@ Search::GIN::Extract::ClassMap::Role - A base role for maps containing classes a
 
 =head1 VERSION
 
-version 0.01060818
+version 0.010608
 
 =head1 SYNOPSIS
 

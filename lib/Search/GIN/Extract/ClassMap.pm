@@ -3,8 +3,10 @@ use strict;
 use warnings;
 
 package Search::GIN::Extract::ClassMap;
-$Search::GIN::Extract::ClassMap::VERSION = '0.01060818';
+
 # ABSTRACT: Delegate Extraction based on class.
+
+our $VERSION = '1.000000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -143,7 +145,7 @@ Search::GIN::Extract::ClassMap - Delegate Extraction based on class.
 
 =head1 VERSION
 
-version 0.01060818
+version 0.010608
 
 =head1 SYNOPSIS
 
