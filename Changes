@@ -1,5 +1,9 @@
 ﻿Revision history for Search-GIN-Extract-ClassMap
 
+1.000001 2015-08-16T08:00:25Z 1ed7610
+ [Documentation Fix]
+ - Don't you hate it when you find yourself short of a colon?
+
 1.000000 2015-08-16T07:38:09Z 5020828
  [01 - Version Scheme]
  - Version scheme migrated from mantissa=8 to mantissa=6.

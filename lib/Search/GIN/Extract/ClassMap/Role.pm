@@ -6,7 +6,7 @@ package Search::GIN::Extract::ClassMap::Role;
 
 # ABSTRACT: A base role for maps containing classes and associated handlers.
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -133,7 +133,7 @@ Search::GIN::Extract::ClassMap::Role - A base role for maps containing classes a
 
 =head1 VERSION
 
-version 1.000000
+version 1.000001
 
 =head1 SYNOPSIS
 
@@ -220,7 +220,7 @@ This is a key => value pair set mapping classes to some Extractor to use for tha
 
 =over 4
 
-=item C<isa>: L<< C<CoercedClassMap>|Search::Extract::ClassMap:Types/CoercedClassMap >>
+=item C<isa>: L<< C<CoercedClassMap>|Search::Extract::ClassMap::Types/CoercedClassMap >>
 
 =item C<coerce>: C<< B<True> >>
 

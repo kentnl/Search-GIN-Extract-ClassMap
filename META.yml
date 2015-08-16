@@ -20,22 +20,22 @@ name: Search-GIN-Extract-ClassMap
 provides:
   Search::GIN::Extract::ClassMap:
     file: lib/Search/GIN/Extract/ClassMap.pm
-    version: '1.000000'
+    version: '1.000001'
   Search::GIN::Extract::ClassMap::Does:
     file: lib/Search/GIN/Extract/ClassMap/Does.pm
-    version: '1.000000'
+    version: '1.000001'
   Search::GIN::Extract::ClassMap::Isa:
     file: lib/Search/GIN/Extract/ClassMap/Isa.pm
-    version: '1.000000'
+    version: '1.000001'
   Search::GIN::Extract::ClassMap::Like:
     file: lib/Search/GIN/Extract/ClassMap/Like.pm
-    version: '1.000000'
+    version: '1.000001'
   Search::GIN::Extract::ClassMap::Role:
     file: lib/Search/GIN/Extract/ClassMap/Role.pm
-    version: '1.000000'
+    version: '1.000001'
   Search::GIN::Extract::ClassMap::Types:
     file: lib/Search/GIN/Extract/ClassMap/Types.pm
-    version: '1.000000'
+    version: '1.000001'
 recommends:
   Moose: '2.000'
 requires:
@@ -55,4 +55,4 @@ resources:
   bugtracker: https://github.com/kentnl/Search-GIN-Extract-ClassMap/issues
   homepage: https://github.com/kentnl/Search-GIN-Extract-ClassMap
   repository: https://github.com/kentnl/Search-GIN-Extract-ClassMap.git
-version: '1.000000'
+version: '1.000001'
