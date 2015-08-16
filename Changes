@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.000000 2015-08-16T07:38:09Z 5020828
  [01 - Version Scheme]
  - Version scheme migrated from mantissa=8 to mantissa=6.
  - This is the primary reason for the 1.x on the box.
