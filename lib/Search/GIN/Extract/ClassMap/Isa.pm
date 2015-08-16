@@ -1,4 +1,4 @@
-use 5.006; # our
+use 5.006;    # our
 use strict;
 use warnings;
 
@@ -33,9 +33,9 @@ sub matches {
   my ( $self, $extractee ) = @_;
   my @m;
   return @m if not blessed $extractee;
-  for my $class ( $self->classmap_entries ){
-    if ( $extractee->isa( $class ) ){
-      push @m, $self->classmap_get( $class );
+  for my $class ( $self->classmap_entries ) {
+    if ( $extractee->isa($class) ) {
+      push @m, $self->classmap_get($class);
     }
   }
   return @m;

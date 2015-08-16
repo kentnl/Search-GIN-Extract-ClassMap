@@ -16,7 +16,7 @@ use MooseX::Types -declare => [
     LikeClassMap
     Extractor
     CoercedClassMap
-  ],
+    ],
 ];
 
 
@@ -32,7 +32,7 @@ use MooseX::Types -declare => [
 
 
 ## no critic (Subroutines::ProhibitCallsToUndeclaredSubs)
-class_type IsaClassMap,  { class => 'Search::GIN::Extract::ClassMap::Isa' };
+class_type IsaClassMap, { class => 'Search::GIN::Extract::ClassMap::Isa' };
 
 coerce IsaClassMap, from HashRef, via {
   require Search::GIN::Extract::ClassMap::Isa;
