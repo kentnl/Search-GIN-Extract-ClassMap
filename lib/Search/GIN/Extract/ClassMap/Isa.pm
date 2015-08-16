@@ -4,7 +4,7 @@ use warnings;
 
 package Search::GIN::Extract::ClassMap::Isa;
 
-# ABSTRACT: Map Extractors based on what an object 'isa'
+# ABSTRACT: Map Extractors based on an objects inheritance
 
 # AUTHORITY
 

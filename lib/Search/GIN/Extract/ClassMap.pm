@@ -38,7 +38,7 @@ Applied on all objects where $object->isa( $classname );
 
 =item L<< C<::ClassMap::Isa>|Search::GIN::Extract::ClassMap::Isa >>
 
-HashRef's are automatically type-cast.
+C<HashRef>'s are automatically type-cast.
 
 =back
 
@@ -66,7 +66,7 @@ Applied on all objects where $object->does( $classname );
 
 =item L<< C<::ClassMap::Does>|Search::GIN::Extract::ClassMap::Does >>
 
-HashRef's are automatically type-cast.
+C<HashRef>'s are automatically type-cast.
 
 =back
 
@@ -97,7 +97,7 @@ this doesn't make complete sense, but its handy for lazy people.
 
 =item L<< C<::ClassMap::Like>|Search::GIN::Extract::ClassMap::Like >>
 
-HashRef's are automatically type-cast.
+C<HashRef>'s are automatically type-cast.
 
 =back
 
@@ -164,13 +164,13 @@ In reality, the form is more like this:
   );
 
 With the minor exception of the 2 exception cases, passing
-an array ref, or a coderef, which internally are typecasted to
+an C<ArrayRef>, or a C<CodeRef>, which internally are type-cast to
 L<< C<Search::GIN::Extract::Attributes>|Search::GIN::Extract::Attributes >>
 and L<< C<Search::GIN::Extract::Callback>|Search::GIN::Extract::Callback >>
 automatically.
 
 =head1 WARNING
 
-This is an early release, API is prone to change without much warning, but best attempts will be made to avoid the need.
+This is an early release, C<API> is prone to change without much warning, but best attempts will be made to avoid the need.
 
 =cut

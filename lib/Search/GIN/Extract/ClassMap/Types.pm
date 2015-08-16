@@ -4,7 +4,7 @@ use warnings;
 
 package Search::GIN::Extract::ClassMap::Types;
 
-# ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercions.
+# ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercing.
 
 # AUTHORITY
 
@@ -116,8 +116,8 @@ coerce Extractor, from CodeRef, via {
 
 This is here to implement a ( somewhat hackish ) semi-deep recursive coercion.
 
-Ensures all keys are of type L</Extractor> in order to be a valid hashref,
-and applies L</Extractor>'s coercions where possible.
+Ensures all keys are of type L</Extractor> in order to be a valid C<HashRef>,
+and coerces to L</Extractor>'s where possible.
 
 =over 4
 

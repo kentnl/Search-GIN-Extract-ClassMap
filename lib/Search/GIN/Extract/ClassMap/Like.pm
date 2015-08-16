@@ -4,7 +4,7 @@ use warnings;
 
 package Search::GIN::Extract::ClassMap::Like;
 
-# ABSTRACT: Map Extractors based on what an object 'isa' or 'does'
+# ABSTRACT: Map Extractors based on what an objects inheritance or roles
 
 # AUTHORITY
 

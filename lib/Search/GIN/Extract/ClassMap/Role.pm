@@ -4,7 +4,7 @@ use warnings;
 
 package Search::GIN::Extract::ClassMap::Role;
 
-# ABSTRACT: The ClassMap core role for generally representing all the user config.
+# ABSTRACT: A base role for maps containing classes and associated handlers.
 
 # AUTHORITY
 

@@ -21,6 +21,7 @@ $bundle->configure;
 my @stopwords = (
   qw(
     metadata Instantiations KiokuDB
+    Accessor Getter
     )
 );
 for my $wordlist (@stopwords) {
