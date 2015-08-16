@@ -1,6 +1,24 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 0.01060818
+ [Added / test requires]
+ - File::Spec
+ - IO::Handle
+ - IPC::Open3
+ - perl 5.006
+
+ [Changed / build requires]
+ - Module::Build 0.4004 → 0.28
+
+ [Changed / configure requires]
+ - Module::Build 0.4004 → 0.28
+
+ [Changed / test requires]
+ - Test::More 0.98 → 1.001014
+
+ [Removed / test requires]
+ - File::Find
+ - File::Temp
 
 0.01060817 2013-04-10T06:25:04Z
  [Changed / build requires]

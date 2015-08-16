@@ -6,6 +6,7 @@ MANIFEST
 META.json
 META.yml
 dist.ini
+dist.ini.meta
 lib/Search/GIN/Extract/ClassMap.pm
 lib/Search/GIN/Extract/ClassMap/Does.pm
 lib/Search/GIN/Extract/ClassMap/Isa.pm
