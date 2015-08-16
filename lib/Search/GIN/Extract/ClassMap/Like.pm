@@ -4,7 +4,7 @@ use warnings;
 
 package Search::GIN::Extract::ClassMap::Like;
 $Search::GIN::Extract::ClassMap::Like::VERSION = '0.01060818';
-# ABSTRACT: Map Extractors based on what an object 'isa' or 'does'
+# ABSTRACT: Map Extractors based on what an objects inheritance or roles
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -51,7 +51,7 @@ __END__
 
 =head1 NAME
 
-Search::GIN::Extract::ClassMap::Like - Map Extractors based on what an object 'isa' or 'does'
+Search::GIN::Extract::ClassMap::Like - Map Extractors based on what an objects inheritance or roles
 
 =head1 VERSION
 

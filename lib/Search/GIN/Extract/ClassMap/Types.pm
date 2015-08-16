@@ -220,8 +220,8 @@ Coerces into a L<< C<::Extract::Callback>|Search::GIN::Extract::Callback >> inst
 
 This is here to implement a ( somewhat hackish ) semi-deep recursive coercion.
 
-Ensures all keys are of type L</Extractor> in order to be a valid hashref,
-and applies L</Extractor>'s coercions where possible.
+Ensures all keys are of type L</Extractor> in order to be a valid C<HashRef>,
+and coerces to L</Extractor>'s where possible.
 
 =over 4
 

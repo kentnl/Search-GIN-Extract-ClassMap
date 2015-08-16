@@ -4,7 +4,7 @@ use warnings;
 
 package Search::GIN::Extract::ClassMap::Role;
 $Search::GIN::Extract::ClassMap::Role::VERSION = '0.01060818';
-# ABSTRACT: The ClassMap core role for generally representing all the user config.
+# ABSTRACT: A base role for maps containing classes and associated handlers.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -127,7 +127,7 @@ __END__
 
 =head1 NAME
 
-Search::GIN::Extract::ClassMap::Role - The ClassMap core role for generally representing all the user config.
+Search::GIN::Extract::ClassMap::Role - A base role for maps containing classes and associated handlers.
 
 =head1 VERSION
 

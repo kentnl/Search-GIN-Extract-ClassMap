@@ -178,7 +178,7 @@ In reality, the form is more like this:
   );
 
 With the minor exception of the 2 exception cases, passing
-an C<ArrayRef>, or a C<CodeRef>, which internally are type-casted to
+an C<ArrayRef>, or a C<CodeRef>, which internally are type-cast to
 L<< C<Search::GIN::Extract::Attributes>|Search::GIN::Extract::Attributes >>
 and L<< C<Search::GIN::Extract::Callback>|Search::GIN::Extract::Callback >>
 automatically.
