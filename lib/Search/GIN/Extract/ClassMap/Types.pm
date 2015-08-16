@@ -57,6 +57,7 @@ use MooseX::Types -declare => [
 
 
 
+## no critic (Subroutines::ProhibitCallsToUndeclaredSubs)
 class_type IsaClassMap,  { class => 'Search::GIN::Extract::ClassMap::Isa' };
 class_type DoesClassMap, { class => 'Search::GIN::Extract::ClassMap::Does' };
 class_type LikeClassMap, { class => 'Search::GIN::Extract::ClassMap::Like' };
