@@ -12,29 +12,6 @@ use Moose::Role 0.90 qw( requires has );
 use Search::GIN::Extract::ClassMap::Types qw( CoercedClassMap );
 use namespace::autoclean;
 
-=head1 SYNOPSIS
-
-  {
-    package Foo;
-    use MooseX::Role;
-    with 'Search::GIN::Extract::ClassMap::Role';
-
-    sub matches {
-      my ( $self, $object );
-      my @m;
-
-      for ( $self->classmap_entries ) {
-        if( $object->some_criteria( $_ ) ) {
-          push @m, $self->classmap_get( $_ );
-        }
-      }
-      return @m;
-    }
-
-  }
-
-=cut
-
 =head1 REQUIRED METHODS
 
 =head2 matches
@@ -103,3 +80,25 @@ sub extract_values {
 
 1;
 
+=head1 SYNOPSIS
+
+  {
+    package Foo;
+    use MooseX::Role;
+    with 'Search::GIN::Extract::ClassMap::Role';
+
+    sub matches {
+      my ( $self, $object );
+      my @m;
+
+      for ( $self->classmap_entries ) {
+        if( $object->some_criteria( $_ ) ) {
+          push @m, $self->classmap_get( $_ );
+        }
+      }
+      return @m;
+    }
+
+  }
+
+=cut
