@@ -4,7 +4,7 @@ use warnings;
 
 package Search::GIN::Extract::ClassMap::Types;
 $Search::GIN::Extract::ClassMap::Types::VERSION = '0.01060818';
-# ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercions.
+# ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercing.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -160,7 +160,7 @@ __END__
 
 =head1 NAME
 
-Search::GIN::Extract::ClassMap::Types - Types for Search::GIN::Extract::ClassMap, mostly for coercions.
+Search::GIN::Extract::ClassMap::Types - Types for Search::GIN::Extract::ClassMap, mostly for coercing.
 
 =head1 VERSION
 

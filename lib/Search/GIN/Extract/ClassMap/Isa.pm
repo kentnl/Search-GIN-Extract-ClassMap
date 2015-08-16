@@ -4,7 +4,7 @@ use warnings;
 
 package Search::GIN::Extract::ClassMap::Isa;
 $Search::GIN::Extract::ClassMap::Isa::VERSION = '0.01060818';
-# ABSTRACT: Map Extractors based on an objects inheritence
+# ABSTRACT: Map Extractors based on an objects inheritance
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -51,7 +51,7 @@ __END__
 
 =head1 NAME
 
-Search::GIN::Extract::ClassMap::Isa - Map Extractors based on an objects inheritence
+Search::GIN::Extract::ClassMap::Isa - Map Extractors based on an objects inheritance
 
 =head1 VERSION
 
