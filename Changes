@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Documentation Fix]
+ - Don't you hate it when you find yourself short of a colon?
 
 1.000000 2015-08-16T07:38:09Z 5020828
  [01 - Version Scheme]
