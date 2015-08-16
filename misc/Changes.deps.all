@@ -1,0 +1,87 @@
+This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
+
+0.01060818
+
+0.01060817 2013-04-10T06:25:04Z
+ [Added / develop requires]
+ - Pod::Coverage::TrustPod
+ - Test::CPAN::Meta
+ - Test::Pod 1.41
+ - Test::Pod::Coverage 1.08
+ - version 0.9901
+
+ [Changed / build requires]
+ - Module::Build 0.3601 → 0.4004
+
+ [Changed / configure requires]
+ - Module::Build 0.3601 → 0.4004
+
+ [Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.3.0 → v1.7.2
+
+ [Changed / test requires]
+ - Test::More 0.96 → 0.98
+
+0.01060816 2012-03-13T06:22:02Z
+ [Added / runtime requires]
+ - perl 5.006
+ - strict
+ - warnings
+
+ [Changed / develop recommends]
+ - Dist::Zilla::PluginBundle::Author::KENTNL::Lite 0.01009803 → v1.3.0
+
+ [Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.0.0 → v1.3.0
+
+ [Removed / test requires]
+ - English
+
+0.01060815 2011-04-14T03:32:21Z
+ [Added / build requires]
+ - Module::Build 0.3601
+
+ [Added / configure requires]
+ - Module::Build 0.3601
+
+ [Added / develop recommends]
+ - Dist::Zilla::PluginBundle::Author::KENTNL::Lite 0.01009803
+
+ [Added / develop requires]
+ - Dist::Zilla::PluginBundle::Author::KENTNL::Lite
+
+ [Added / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.0.0
+
+ [Added / runtime requires]
+ - Moose::Role 0.90
+ - Search::GIN::Extract
+ - Search::GIN::Extract::Attributes
+ - Search::GIN::Extract::Callback
+
+ [Added / test requires]
+ - English
+ - File::Find
+ - File::Temp
+ - Test::More 0.96
+
+ [Changed / runtime requires]
+ - MooseX::Types 0.19 → 0
+ - MooseX::Types::Moose 0.19 → 0
+ - aliased 0.30 → 0
+ - namespace::autoclean 0.08 → 0
+
+ [Removed / runtime requires]
+ - Search::GIN 0.03
+ - Test::More 0.92
+
+0.01002312 2009-09-18T00:54:27Z
+ [Changed / runtime requires]
+ - Moose 0.89 → 0.90
+
+ [Removed / runtime requires]
+ - MooseX::AttributeHelpers 0.21
+
+0.01001206 2009-09-06T18:00:57Z
+ [Added / runtime requires]
+ - aliased 0.30

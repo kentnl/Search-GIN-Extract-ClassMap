@@ -3,24 +3,12 @@
 {{$NEXT}}
 
 0.01060817 2013-04-10T06:25:04Z
- [Dependencies::Added / develop requires]
- - Pod::Coverage::TrustPod
- - Test::CPAN::Meta
- - Test::Pod 1.41
- - Test::Pod::Coverage 1.08
- - version 0.9901
-
- [Dependencies::Changed / build requires]
- - Module::Build 0.3601 → 0.4004
-
- [Dependencies::Changed / configure requires]
- - Module::Build 0.3601 → 0.4004
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.3.0 → v1.7.2
-
- [Dependencies::Changed / test requires]
- - Test::More 0.96 → 0.98
+ [Dependencies::Stats]
+ - Dependencies changed since 0.01060816, see misc/*.deps* for details
+ - build: ↑1
+ - configure: ↑1
+ - develop: +5 (suggests: ↑1)
+ - test: ↑1
 
  [Documentation]
  - Update copyright year
@@ -35,19 +23,11 @@
 0.01060816 2012-03-13T06:22:02Z
  - Maintenance Release
 
- [Dependencies::Added / runtime requires]
- - perl 5.006
- - strict
- - warnings
-
- [Dependencies::Changed / develop recommends]
- - Dist::Zilla::PluginBundle::Author::KENTNL::Lite 0.01009803 → v1.3.0
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.0.0 → v1.3.0
-
- [Dependencies::Removed / test requires]
- - English
+ [Dependencies::Stats]
+ - Dependencies changed since 0.01060815, see misc/*.deps* for details
+ - develop: (recommends: ↑1, suggests: ↑1)
+ - runtime: +3
+ - test: -1
 
  [Internals]
  - Move $VERSION declarations out of BEGIN
@@ -64,25 +44,13 @@
 0.01060815 2011-04-14T03:32:21Z
  - Maintenance release.
 
- [Dependencies]
- - Test::More removed from Runtime deps
- - Explicit dependency on Moose::Role added.
- - Dropped dependency on Search::GIN
- - Added Dependency on Search::GIN::Extract
- - Added Dependency on Search::GIN::Extract::Attributes
- - Added dependency on Search::GIN::Extract::Callback
-
- [Dependencies:Build]
- - Module::Build 0.3601 required for configure/build
-
- [Dependencies:Devel]
- - Now advertises @Author::KENTNL for development.
-
- [Dependencies:Test]
- - Test::More 0.96 is added to build deps.
- - English is added to build deps
- - File::Find is added to build deps
- - File::Temp is added to build deps
+ [Dependencies::Stats]
+ - Dependencies changed since 0.01002312, see misc/*.deps* for details
+ - build: +1
+ - configure: +1
+ - develop: +1 (recommends: +1, suggests: +1)
+ - runtime: +4 ↓4 -2
+ - test: +4
 
  [Documentation]
  - Fixed a few POD spelling issues.
@@ -106,12 +74,19 @@
 0.01002312 2009-09-18T00:54:27Z
  - Use Moose's Trait Attribute Helpers
 
+ [Dependencies::Stats]
+ - Dependencies changed since 0.01001206, see misc/*.deps* for details
+ - runtime: ↑1 -1
+
 0.01001206 2009-09-06T18:00:57Z
  - Added depend on 'aliased'
  - Added [CompileTests]
  - Dropped manual load tests in favour of generated ones.
  - Start shipping dist.ini with builds because we really don't mind.
 
+ [Dependencies::Stats]
+ - Dependencies changed since 0.01000604, see misc/*.deps* for details
+ - runtime: +1
+
 0.01000604 2009-08-31T16:05:53Z
  - First version.
-
