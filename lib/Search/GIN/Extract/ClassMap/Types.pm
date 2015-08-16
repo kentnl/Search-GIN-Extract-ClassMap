@@ -1,3 +1,4 @@
+use 5.006;    # our
 use strict;
 use warnings;
 
@@ -5,7 +6,8 @@ package Search::GIN::Extract::ClassMap::Types;
 
 # ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercions.
 
-# $Id:$
+# AUTHORITY
+
 use MooseX::Types::Moose qw( :all );
 use MooseX::Types -declare => [
   qw[
@@ -31,7 +33,6 @@ use MooseX::Types -declare => [
 
 =cut
 
-
 =head2 DoesClassMap
 
 =head3 class_type
@@ -56,6 +57,7 @@ use MooseX::Types -declare => [
 
 =cut
 
+## no critic (Subroutines::ProhibitCallsToUndeclaredSubs)
 class_type IsaClassMap,  { class => 'Search::GIN::Extract::ClassMap::Isa' };
 class_type DoesClassMap, { class => 'Search::GIN::Extract::ClassMap::Does' };
 class_type LikeClassMap, { class => 'Search::GIN::Extract::ClassMap::Like' };
@@ -72,7 +74,6 @@ coerce LikeClassMap, from HashRef, via {
   require Search::GIN::Extract::ClassMap::Like;
   'Search::GIN::Extract::ClassMap::Like'->new( classmap => $_ );
 };
-
 
 =head2 Extractor
 

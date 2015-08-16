@@ -1,3 +1,4 @@
+use 5.006; # our
 use strict;
 use warnings;
 
@@ -5,8 +6,9 @@ package Search::GIN::Extract::ClassMap::Isa;
 
 # ABSTRACT: Map Extractors based on what an object 'isa'
 
-use Moose;
-use MooseX::Types::Moose qw( :all );
+# AUTHORITY
+
+use Moose qw( with blessed );
 use namespace::autoclean;
 
 =head1 ROLES
@@ -16,6 +18,9 @@ use namespace::autoclean;
 =cut
 
 with 'Search::GIN::Extract::ClassMap::Role';
+
+no Moose;
+__PACKAGE__->meta->make_immutable;
 
 =head1 METHODS
 
@@ -40,9 +45,6 @@ sub matches {
   }
   return @m;
 }
-
-no Moose;
-__PACKAGE__->meta->make_immutable;
 
 1;
 
