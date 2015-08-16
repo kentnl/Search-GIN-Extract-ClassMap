@@ -150,6 +150,10 @@ an array ref, or a coderef, which internally are typecasted to
 L<Search::GIN::Extract::Attributes> and L<Search::GIN::Extract::Callback>
 automatically.
 
+=head1 WARNING
+
+This is an early release, API is prone to change without much warning, but best attempts will be made to avoid the need.
+
 =head1 ROLES
 
 =head2 L<Search::GIN::Extract>
@@ -205,10 +209,6 @@ HashRef's are automatically type-cast.
 =head2 extract_values
 
 =head3 for: L<Search::GIN::Extract>
-
-=head1 WARNING
-
-This is an early release, API is prone to change without much warning, but best attempts will be made to avoid the need.
 
 =head1 AUTHOR
 
