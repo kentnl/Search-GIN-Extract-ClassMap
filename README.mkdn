@@ -4,7 +4,7 @@ Search::GIN::Extract::ClassMap - Delegate Extraction based on class.
 
 # VERSION
 
-version 1.000000
+version 1.000001
 
 # SYNOPSIS
 
