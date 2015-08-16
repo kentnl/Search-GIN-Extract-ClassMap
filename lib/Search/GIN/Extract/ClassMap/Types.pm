@@ -1,17 +1,15 @@
+use 5.006;    # our
 use strict;
 use warnings;
 
 package Search::GIN::Extract::ClassMap::Types;
-BEGIN {
-  $Search::GIN::Extract::ClassMap::Types::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Search::GIN::Extract::ClassMap::Types::VERSION = '0.01060817';
-}
 
-# ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercions.
+# ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercing.
 
-# $Id:$
+our $VERSION = '1.000000';
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use MooseX::Types::Moose qw( :all );
 use MooseX::Types -declare => [
   qw[
@@ -20,29 +18,84 @@ use MooseX::Types -declare => [
     LikeClassMap
     Extractor
     CoercedClassMap
-    ]
+    ],
 ];
 
 
 
 
 
-class_type IsaClassMap,  { class => 'Search::GIN::Extract::ClassMap::Isa' };
-class_type DoesClassMap, { class => 'Search::GIN::Extract::ClassMap::Does' };
-class_type LikeClassMap, { class => 'Search::GIN::Extract::ClassMap::Like' };
+
+
+
+
+
+
+
+
+## no critic (Subroutines::ProhibitCallsToUndeclaredSubs)
+class_type IsaClassMap, { class => 'Search::GIN::Extract::ClassMap::Isa' };
 
 coerce IsaClassMap, from HashRef, via {
   require Search::GIN::Extract::ClassMap::Isa;
   'Search::GIN::Extract::ClassMap::Isa'->new( classmap => $_ );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+class_type DoesClassMap, { class => 'Search::GIN::Extract::ClassMap::Does' };
+
 coerce DoesClassMap, from HashRef, via {
   require Search::GIN::Extract::ClassMap::Does;
   'Search::GIN::Extract::ClassMap::Does'->new( classmap => $_ );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+class_type LikeClassMap, { class => 'Search::GIN::Extract::ClassMap::Like' };
+
 coerce LikeClassMap, from HashRef, via {
   require Search::GIN::Extract::ClassMap::Like;
   'Search::GIN::Extract::ClassMap::Like'->new( classmap => $_ );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -53,13 +106,29 @@ subtype Extractor, as Object, where {
 
 coerce Extractor, from ArrayRef [Str], via {
   require Search::GIN::Extract::Attributes;
-  Search::GIN::Extract::Attributes->new( attributes => $_ )
+  Search::GIN::Extract::Attributes->new( attributes => $_ );
 
 };
 coerce Extractor, from CodeRef, via {
   require Search::GIN::Extract::Callback;
   Search::GIN::Extract::Callback->new( extract => $_ );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 subtype CoercedClassMap, as HashRef, where {
@@ -89,78 +158,80 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
-Search::GIN::Extract::ClassMap::Types - Types for Search::GIN::Extract::ClassMap, mostly for coercions.
+Search::GIN::Extract::ClassMap::Types - Types for Search::GIN::Extract::ClassMap, mostly for coercing.
 
 =head1 VERSION
 
-version 0.01060817
+version 1.000000
 
 =head1 TYPES
 
-=head2 IsaClassMap
+=head2 C<IsaClassMap>
 
-=head3 class_type
+=over 4
 
-=head4 L<Search::GIN::Extract::ClassMap::Isa>
+=item C<class_type> : L<< C<::ClassMap::Isa>|Search::GIN::Extract::ClassMap::Isa >>
 
-=head3 COERCIONS
+=item C<coerces_from>: C<HashRef>
 
-=head4 HashRef
+=back
 
-=head2 DoesClassMap
+=head2 C<DoesClassMap>
 
-=head3 class_type
+=over 4
 
-=head4 L<Search::GIN::Extract::ClassMap::Does>
+=item C<class_type>: L<< C<::ClassMap::Does>|Search::GIN::Extract::ClassMap::Does >>
 
-=head3 COERCIONS
+=item coerces from: C<HashRef>
 
-=head4 HashRef
+=back
 
-=head2 LikeClassMap
+=head2 C<LikeClassMap>
 
-=head3 class_type
+=over 4
 
-=head4 L<Search::GIN::Extract::ClassMap::Like>
+=item C<class_type>: L<< C<::ClassMap::Like>|Search::GIN::Extract::ClassMap::Like >>
 
-=head3 COERCIONS
+=item coerces from: C<HashRef>
 
-=head4 HashRef
+=back
 
-=head2 Extractor
+=head2 C<Extractor>
 
-Mostly here to identify things that derive from L<Search::GIN::Extract>
+Mostly here to identify things that derive from L<< C<Search::GIN::Extract>|Search::GIN::Extract >>
 
-=head3 subtype
+=over 4
 
-=head4 Object
+=item C<subtype>: C<Object>
 
-=head3 COERCIONS
+=item coerces from: C<ArrayRef[ Str ]>
 
-=head4 ArrayRef[ Str ]
+Coerces into a L<< C<::Extract::Attributes>|Search::GIN::Extract::Attributes >> instance.
 
-Coerces into a L<Search::GIN::Extract::Attributes> instance.
+=item coerces from: C<CodeRef>
 
-=head4 CodeRef
+Coerces into a L<< C<::Extract::Callback>|Search::GIN::Extract::Callback >> instance.
 
-Coerces into a L<Search::GIN::Extract::Callback> instance.
+=back
 
-=head2 CoercedClassMap
+=head2 C<CoercedClassMap>
 
 This is here to implement a ( somewhat hackish ) semi-deep recursive coercion.
 
-Ensures all keys are of type L</Extractor> in order to be a valid hashref,
-and applies L</Extractor>'s coercions where possible.
+Ensures all keys are of type L</Extractor> in order to be a valid C<HashRef>,
+and coerces to L</Extractor>'s where possible.
 
-=head3 subtype
+=over 4
 
-=head4 HashRef
+=item C<subtype>: C<HashRef[ Extractor ]>
 
-=head3 COERCIONS
+=item coerces from: C<HashRef[ coerce Extractor ]>
 
-=head4 HashRef
+=back
 
 =head1 AUTHOR
 
@@ -168,7 +239,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric.
+This software is copyright (c) 2015 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
