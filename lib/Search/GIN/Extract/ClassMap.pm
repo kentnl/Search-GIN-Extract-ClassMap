@@ -240,9 +240,9 @@ Applied on all objects where $object->does( $classname );
 
 =item C<< HashRef[ L<Extractor|Search::GIN::Extract::ClassMap::Types/Extractor> ] >>
 
-=head4 L<< C<CoercedClassMap>|Search::GIN::Extract::ClassMap::Types/CoercedClassMap >>
+=item L<< C<CoercedClassMap>|Search::GIN::Extract::ClassMap::Types/CoercedClassMap >>
 
-=head4 L<< C<::ClassMap::Does>|Search::GIN::Extract::ClassMap::Does >>
+=item L<< C<::ClassMap::Does>|Search::GIN::Extract::ClassMap::Does >>
 
 HashRef's are automatically type-cast.
 
