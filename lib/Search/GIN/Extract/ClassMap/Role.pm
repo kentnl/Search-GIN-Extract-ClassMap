@@ -24,6 +24,7 @@ use namespace::autoclean;
 
 
 
+
 requires 'matches';
 
 
@@ -159,7 +160,8 @@ version 0.01060818
 
   my ( @extractors ) = $item->matches( $extractee )
 
-Must take an object and return a list of L<Search::GIN::Extract> items to use for it
+Must take an object and return a list of 
+L<< C<Search::GIN::Extract>|Search::GIN::Extract >> items to use for it.
 
   for my $extractor ( @extractors ) {
     my $metadata = $extractor->extract_values( $extractee );

@@ -200,7 +200,7 @@ version 0.01060818
 
 =head2 C<Extractor>
 
-Mostly here to identify things that derive from L<Search::GIN::Extract>
+Mostly here to identify things that derive from L<< C<Search::GIN::Extract>|Search::GIN::Extract >>
 
 =over 4
 
@@ -208,11 +208,11 @@ Mostly here to identify things that derive from L<Search::GIN::Extract>
 
 =item coerces from: C<ArrayRef[ Str ]>
 
-Coerces into a L<Search::GIN::Extract::Attributes> instance.
+Coerces into a L<< C<::Extract::Attributes>|Search::GIN::Extract::Attributes >> instance.
 
 =item coerces from: C<CodeRef>
 
-Coerces into a L<Search::GIN::Extract::Callback> instance.
+Coerces into a L<< C<::Extract::Callback>|Search::GIN::Extract::Callback >> instance.
 
 =back
 
