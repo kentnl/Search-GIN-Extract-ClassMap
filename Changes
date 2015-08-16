@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Documentation]
+ - Turns out I suck at L<>, and this release hopefully finally has all the L<> links fixed.
 
 1.000001 2015-08-16T08:00:25Z 1ed7610
  [Documentation Fix]
