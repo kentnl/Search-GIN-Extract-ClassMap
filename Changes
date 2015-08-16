@@ -1,6 +1,6 @@
 ﻿Revision history for Search-GIN-Extract-ClassMap
 
-1.000000 2015-08-16T07:14:49Z f833c19
+1.000000 2015-08-16T07:22:03Z 8b2a6bb
  [01 - Version Scheme]
  - Version scheme migrated from mantissa=8 to mantissa=6.
  - This is the primary reason for the 1.x on the box.
