@@ -115,35 +115,35 @@ version 0.01060818
 
 =head1 SYNOPSIS
 
-my $extractor = Search::GIN::Extract::ClassMap->new(
-  extract_isa => {
-    'Foo' => [qw( bar baz quux )],
-    'Bar' => Search::GIN::Extract::AttributeIndex->new(),
-    'Baz' => sub { shift; my $object = shift; { a => $object->a() } },
-  },
-  extract_does => {
+  my $extractor = Search::GIN::Extract::ClassMap->new(
+    extract_isa => {
+      'Foo' => [qw( bar baz quux )],
+      'Bar' => Search::GIN::Extract::AttributeIndex->new(),
+      'Baz' => sub { shift; my $object = shift; { a => $object->a() } },
+    },
+    extract_does => {
 
-  },
-  extract =>  {
-    /* either ISA or DOES */
-  },
-);
+    },
+    extract =>  {
+      /* either ISA or DOES */
+    },
+  );
 
 In reality, the form is more like this:
 
-my $extractor = Search::GIN::Extract::ClassMap->new(
-  extract_isa => {
-    'Foo' => Search::GIN::Extract::*,
-    'Bar' => Search::GIN::Extract::*,
-    'Baz' => Search::GIN::Extract::*,
-  },
-  extract_does => {
+  my $extractor = Search::GIN::Extract::ClassMap->new(
+    extract_isa => {
+      'Foo' => Search::GIN::Extract::*,
+      'Bar' => Search::GIN::Extract::*,
+      'Baz' => Search::GIN::Extract::*,
+    },
+    extract_does => {
 
-  },
-  extract =>  {
-    /* either ISA or DOES */
-  },
-);
+    },
+    extract =>  {
+      /* either ISA or DOES */
+    },
+  );
 
 With the minor exception of the 2 exception cases, passing
 an array ref, or a coderef, which internally are typecasted to
