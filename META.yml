@@ -5,11 +5,10 @@ author:
 build_requires:
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'
-  Module::Build: '0.4214'
-  Test::More: '1.001014'
+  Test::More: '0.96'
   perl: '5.006'
 configure_requires:
-  Module::Build: '0.4214'
+  ExtUtils::MakeMaker: '0'
   perl: '5.006'
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 5.037, CPAN::Meta::Converter version 2.150005'

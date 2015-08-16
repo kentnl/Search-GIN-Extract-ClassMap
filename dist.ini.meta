@@ -9,6 +9,8 @@ bumpversions  = 1
 normal_form   = numify
 mantissa      = 6
 srcreadme     = mkdn
+toolkit       = eumm
+toolkit_hardness = soft
 
 ;twitter_extra_hash_tags = #
 
