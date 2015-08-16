@@ -487,6 +487,11 @@
                      },
                      {
                         "class" : "Pod::Weaver::Section::Collect",
+                        "name" : "REQUIRED METHODS",
+                        "version" : "4.012"
+                     },
+                     {
+                        "class" : "Pod::Weaver::Section::Collect",
                         "name" : "METHODS",
                         "version" : "4.012"
                      },

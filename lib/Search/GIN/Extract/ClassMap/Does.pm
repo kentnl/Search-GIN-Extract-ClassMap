@@ -64,11 +64,11 @@ version 0.01060818
   # List of Search::GIN::Extract objects
   my ( @extractors ) = $does_object->matches( $extractee );
 
+returns a list of extractors that are in the map for the object.
+
   for my $extractor ( @extractors ) {
     my $metadata = $extractor->extract_values( $extractee );
   }
-
-returns a list of extractors that are in the map for the object.
 
 =head1 AUTHOR
 
