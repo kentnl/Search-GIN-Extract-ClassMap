@@ -6,7 +6,7 @@ package Search::GIN::Extract::ClassMap;
 
 # ABSTRACT: Delegate Extraction based on class.
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -145,7 +145,7 @@ Search::GIN::Extract::ClassMap - Delegate Extraction based on class.
 
 =head1 VERSION
 
-version 1.000001
+version 1.000002
 
 =head1 SYNOPSIS
 

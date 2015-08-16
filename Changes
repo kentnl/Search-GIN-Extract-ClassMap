@@ -1,5 +1,9 @@
 ﻿Revision history for Search-GIN-Extract-ClassMap
 
+1.000002 2015-08-16T08:09:03Z 7e56737
+ [Documentation]
+ - Turns out I suck at L<>, and this release hopefully finally has all the L<> links fixed.
+
 1.000001 2015-08-16T08:00:25Z 1ed7610
  [Documentation Fix]
  - Don't you hate it when you find yourself short of a colon?
