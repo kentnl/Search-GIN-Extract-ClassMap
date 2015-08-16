@@ -6,6 +6,8 @@ package Search::GIN::Extract::ClassMap::Does;
 
 # ABSTRACT: Map Extractors based on an objects roles.
 
+our $VERSION = '1.000000';
+
 # AUTHORITY
 
 use Moose qw( with blessed );

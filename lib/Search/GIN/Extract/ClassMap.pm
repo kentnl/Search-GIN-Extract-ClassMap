@@ -6,6 +6,8 @@ package Search::GIN::Extract::ClassMap;
 
 # ABSTRACT: Delegate Extraction based on class.
 
+our $VERSION = '1.000000';
+
 # AUTHORITY
 
 use Moose 0.90 qw( with has );

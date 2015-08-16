@@ -6,6 +6,8 @@ package Search::GIN::Extract::ClassMap::Role;
 
 # ABSTRACT: A base role for maps containing classes and associated handlers.
 
+our $VERSION = '1.000000';
+
 # AUTHORITY
 
 use Moose::Role 0.90 qw( requires has );
