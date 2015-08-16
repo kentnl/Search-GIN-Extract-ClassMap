@@ -179,7 +179,8 @@ In reality, the form is more like this:
 
 With the minor exception of the 2 exception cases, passing
 an array ref, or a coderef, which internally are typecasted to
-L<Search::GIN::Extract::Attributes> and L<Search::GIN::Extract::Callback>
+L<< C<Search::GIN::Extract::Attributes>|Search::GIN::Extract::Attributes >>
+and L<< C<Search::GIN::Extract::Callback>|Search::GIN::Extract::Callback >>
 automatically.
 
 =head1 WARNING
@@ -192,7 +193,7 @@ This is an early release, API is prone to change without much warning, but best 
 
   my ( @values ) = $object->extract_values( $extractee );
 
-B<for:> L<Search::GIN::Extract>
+B<for:> L<< C<Search::GIN::Extract>|Search::GIN::Extract >>
 
 Iterates the contents of the C<< extract($|_\w+$) >> rules, and asks them to
 extract their respective information, and returns the resulting results as a

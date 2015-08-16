@@ -492,6 +492,11 @@
                      },
                      {
                         "class" : "Pod::Weaver::Section::Collect",
+                        "name" : "TYPES",
+                        "version" : "4.012"
+                     },
+                     {
+                        "class" : "Pod::Weaver::Section::Collect",
                         "name" : "ATTRIBUTES",
                         "version" : "4.012"
                      },

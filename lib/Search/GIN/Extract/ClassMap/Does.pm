@@ -11,16 +11,11 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 use Moose qw( with blessed );
 use namespace::autoclean;
 
-
-
-
-
-
-
 with 'Search::GIN::Extract::ClassMap::Role';
 
 no Moose;
 __PACKAGE__->meta->make_immutable;
+
 
 
 
@@ -62,19 +57,18 @@ Search::GIN::Extract::ClassMap::Does - Map Extractors based on what an object 'd
 
 version 0.01060818
 
-=head1 ROLES
-
-=head2 L<Search::GIN::Extract::ClassMap::Role>
-
 =head1 METHODS
 
-=head2 matches
+=head2 C<matches>
+
+  # List of Search::GIN::Extract objects
+  my ( @extractors ) = $does_object->matches( $extractee );
+
+  for my $extractor ( @extractors ) {
+    my $metadata = $extractor->extract_values( $extractee );
+  }
 
 returns a list of extractors that are in the map for the object.
-
-=head3 signature: ->matches( $object )
-
-=head3 return: Search::GIN::Extract @items
 
 =head1 AUTHOR
 

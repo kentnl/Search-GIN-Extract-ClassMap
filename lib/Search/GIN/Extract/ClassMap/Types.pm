@@ -31,45 +31,47 @@ use MooseX::Types -declare => [
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## no critic (Subroutines::ProhibitCallsToUndeclaredSubs)
 class_type IsaClassMap,  { class => 'Search::GIN::Extract::ClassMap::Isa' };
-class_type DoesClassMap, { class => 'Search::GIN::Extract::ClassMap::Does' };
-class_type LikeClassMap, { class => 'Search::GIN::Extract::ClassMap::Like' };
 
 coerce IsaClassMap, from HashRef, via {
   require Search::GIN::Extract::ClassMap::Isa;
   'Search::GIN::Extract::ClassMap::Isa'->new( classmap => $_ );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+class_type DoesClassMap, { class => 'Search::GIN::Extract::ClassMap::Does' };
+
 coerce DoesClassMap, from HashRef, via {
   require Search::GIN::Extract::ClassMap::Does;
   'Search::GIN::Extract::ClassMap::Does'->new( classmap => $_ );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+class_type LikeClassMap, { class => 'Search::GIN::Extract::ClassMap::Like' };
+
 coerce LikeClassMap, from HashRef, via {
   require Search::GIN::Extract::ClassMap::Like;
   'Search::GIN::Extract::ClassMap::Like'->new( classmap => $_ );
@@ -166,68 +168,68 @@ version 0.01060818
 
 =head1 TYPES
 
-=head2 IsaClassMap
+=head2 C<IsaClassMap>
 
-=head3 class_type
+=over 4
 
-=head4 L<Search::GIN::Extract::ClassMap::Isa>
+=item C<class_type> : L<< C<::ClassMap::Isa>|Search::GIN::Extract::ClassMap::Isa >>
 
-=head3 COERCIONS
+=item C<coerces_from>: C<HashRef>
 
-=head4 HashRef
+=back
 
-=head2 DoesClassMap
+=head2 C<DoesClassMap>
 
-=head3 class_type
+=over 4
 
-=head4 L<Search::GIN::Extract::ClassMap::Does>
+=item C<class_type>: L<< C<::ClassMap::Does>|Search::GIN::Extract::ClassMap::Does >>
 
-=head3 COERCIONS
+=item coerces from: C<HashRef>
 
-=head4 HashRef
+=back
 
-=head2 LikeClassMap
+=head2 C<LikeClassMap>
 
-=head3 class_type
+=over 4
 
-=head4 L<Search::GIN::Extract::ClassMap::Like>
+=item C<class_type>: L<< C<::ClassMap::Like>|Search::GIN::Extract::ClassMap::Like >>
 
-=head3 COERCIONS
+=item coerces from: C<HashRef>
 
-=head4 HashRef
+=back
 
-=head2 Extractor
+=head2 C<Extractor>
 
 Mostly here to identify things that derive from L<Search::GIN::Extract>
 
-=head3 subtype
+=over 4
 
-=head4 Object
+=item C<subtype>: C<Object>
 
-=head3 COERCIONS
-
-=head4 ArrayRef[ Str ]
+=item coerces from: C<ArrayRef[ Str ]>
 
 Coerces into a L<Search::GIN::Extract::Attributes> instance.
 
-=head4 CodeRef
+=item coerces from: C<CodeRef>
 
 Coerces into a L<Search::GIN::Extract::Callback> instance.
 
-=head2 CoercedClassMap
+=back
+
+=head2 C<CoercedClassMap>
 
 This is here to implement a ( somewhat hackish ) semi-deep recursive coercion.
 
 Ensures all keys are of type L</Extractor> in order to be a valid hashref,
 and applies L</Extractor>'s coercions where possible.
 
-=head3 subtype
+=over 4
 
-=head4 HashRef
+=item C<subtype>: C<HashRef[ Extractor ]>
 
-=head3 COERCIONS
+=item coerces from: C<HashRef[ coerce Extractor ]>
 
-=head4 HashRef
+=back
 
 =head1 AUTHOR
 
