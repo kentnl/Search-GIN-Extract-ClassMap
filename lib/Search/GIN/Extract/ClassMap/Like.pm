@@ -6,7 +6,7 @@ package Search::GIN::Extract::ClassMap::Like;
 
 # ABSTRACT: Map Extractors based on what an objects inheritance or roles
 
-our $VERSION = '1.000002';
+our $VERSION = '1.000003';
 
 # AUTHORITY
 
