@@ -12,39 +12,80 @@ use Moose::Role 0.90 qw( requires has );
 use Search::GIN::Extract::ClassMap::Types qw( CoercedClassMap );
 use namespace::autoclean;
 
-=head1 REQUIRED METHODS
+=requires C<matches>
 
-=head2 matches
+  my ( @extractors ) = $item->matches( $extractee )
 
-Must take an object and return a list of L<Search::GIN::Extract> items to use for it
+Must take an object and return a list of
+L<< C<Search::GIN::Extract>|Search::GIN::Extract >> items to use for it.
 
-=head3 signature: ->matches( $object )
-
-=head3 returns: L<Search::GIN::Extract> @items
+  for my $extractor ( @extractors ) {
+    my $metadata = $extractor->extract_values( $extractee );
+  }
 
 =cut
 
 requires 'matches';
 
-=head1 ATTRIBUTES
+=attr C<classmap>
 
-=head2 classmap
+  my $item = Thing::That::Does::ClassMap::Role->new(
+    classmap => {
+      classname => handler_for_objects_of_classname
+    }
+  );
+  # or
+  $item->classmap( classmap => { ... } );
 
 This is a key => value pair set mapping classes to some Extractor to use for that class
 
-=head3 types:
 
-=head4 HashRef [ L<Search::GIN::Extract::ClassMap::Types/Extractor> ]
+  $item->classmap_entries # class names / keys
 
-=head4 L<Search::Extract::ClassMap:Types/CoercedClassMap>
+  $item->classmap_set( $classname, $handler );
 
-=head3 provides:
+  my $handler = $item->classmap_get( $classname );
 
-=head4 classmap_entries
+=over 4
 
-=head4 classmap_set
+=item C<isa>: L<< C<CoercedClassMap>|Search::Extract::ClassMap:Types/CoercedClassMap >>
 
-=head4 classmap_get
+=item C<coerce>: C<< B<True> >>
+
+=item C<provides>:
+
+=over 4
+
+=item * L<< C<classmap_entries>|/classmap_entries >>
+
+=item * L<< C<classmap_set>|/classmap_set >>
+
+=item * L<< C<classmap_get>|/classmap_get >>
+
+=back
+
+=back
+
+=method C<classmap_entries>
+
+  my ( @classnames ) = $item->classmap_entries();
+
+Fetches the C<Class> names ( C<keys> ) for all registered handlers in this
+instance. ( Accessor for L<< C<classmap>|/classmap >> )
+
+=method C<classmap_set>
+
+  $item->classmap_set( $classname, $handler );
+
+Sets the handler for class C<$classname> in this instance. ( Setter for
+L<< C<classmap>|/classmap >> )
+
+=method C<classmap_get>
+
+  $item->classmap_get( $classname );
+
+Gets the handler for class C<$classname> in this instance. ( Getter for
+L<< C<classmap>|/classmap >> )
 
 =cut
 
@@ -63,13 +104,11 @@ has classmap => (
 
 no Moose::Role;
 
-=head1 METHODS
+=method C<extract_values>
 
-=head2 extract_values
+  my @values = $instance->extract_values( $extractee );
 
 extracts values from all matching rules for the object
-
-=head3 signature: ->extract_values( $object )
 
 =cut
 
@@ -88,11 +127,11 @@ sub extract_values {
     with 'Search::GIN::Extract::ClassMap::Role';
 
     sub matches {
-      my ( $self, $object );
+      my ( $self, $extractee ) = @_;
       my @m;
 
       for ( $self->classmap_entries ) {
-        if( $object->some_criteria( $_ ) ) {
+        if( $extractee->some_criteria( $_ ) ) {
           push @m, $self->classmap_get( $_ );
         }
       }

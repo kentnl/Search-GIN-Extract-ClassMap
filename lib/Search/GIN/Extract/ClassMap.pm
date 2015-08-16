@@ -15,76 +15,108 @@ use aliased 'Search::GIN::Extract::ClassMap::Does' => 'CMDoes';
 use aliased 'Search::GIN::Extract::ClassMap::Like' => 'CMLike';
 use namespace::autoclean;
 
-=head1 ROLES
+with qw(  Search::GIN::Extract );
 
-=head2 L<Search::GIN::Extract>
+=attr C<extract_isa>
 
-=cut
+  my $object = Search::GIN::Extract::ClassMap->new(
+    extract_isa => $isa_thing
+  );
+  # or
+  $object->extract_isa( $isa_thing )
 
-with qw(
-  Search::GIN::Extract
-);
-
-=head1 ATTRIBUTES
-
-=head2 extract_isa
 
 Applied on all objects where $object->isa( $classname );
 
-=head3 types:
+=head3 C<$isa_thing>
 
-=head4 HashRef[ L<Search::GIN::Extract::ClassMap::Types/Extractor> ] ->
+=over 4
 
-=head4 L<Search::GIN::Extract::ClassMap::Types/CoercedClassMap> ->
+=item C<< HashRef[ L<Extractor|Search::GIN::Extract::ClassMap::Types/Extractor> ] >>
 
-=head4 L<Search::GIN::Extract::ClassMap::Isa>
+=item L<< C<CoercedClassMap>|Search::GIN::Extract::ClassMap::Types/CoercedClassMap >>
+
+=item L<< C<::ClassMap::Isa>|Search::GIN::Extract::ClassMap::Isa >>
 
 HashRef's are automatically type-cast.
 
-=head2 extract_does
+=back
+
+=cut
+
+has 'extract_isa' => ( 'isa', IsaClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMIsa->new() } );
+
+=attr C<extract_does>
+
+  my $object =  Search::GIN::Extract::ClassMap->new(
+    extract_does => $does_thing
+  );
+  # or
+  $object->extract_does( $does_thing );
 
 Applied on all objects where $object->does( $classname );
 
-=head3 types:
+=head3 C<$does_thing>
 
-=head4 HashRef[ L<Search::GIN::Extract::ClassMap::Types/Extractor> ] ->
+=over 4
 
-=head4 L<Search::GIN::Extract::ClassMap::Types/CoercedClassMap> ->
+=item C<< HashRef[ L<Extractor|Search::GIN::Extract::ClassMap::Types/Extractor> ] >>
 
-=head4 L<Search::GIN::Extract::ClassMap::Does>
+=item L<< C<CoercedClassMap>|Search::GIN::Extract::ClassMap::Types/CoercedClassMap >>
+
+=item L<< C<::ClassMap::Does>|Search::GIN::Extract::ClassMap::Does >>
 
 HashRef's are automatically type-cast.
 
-=head2 extract_does
+=back
+
+=cut
+
+has 'extract_does' => ( 'isa', DoesClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMDoes->new() } );
+
+=attr C<extract>
+
+  my $object =  Search::GIN::Extract::ClassMap->new(
+    extract => $like_thing
+  );
+  # or
+  $object->extract( $like_thing );
+
 
 Applied on all objects where $object->does( $classname ) OR $object->isa( $classname );
 
 this doesn't make complete sense, but its handy for lazy people.
 
-=head3 types:
+=head3 C<$like_thing>
 
-=head4 HashRef[ L<Search::GIN::Extract::ClassMap::Types/Extractor> ]
+=over 4
 
-=head4 L<Search::GIN::Extract::ClassMap::Types/CoercedClassMap> ->
+=item C<< HashRef[ L<Extractor|Search::GIN::Extract::ClassMap::Types/Extractor> ] >>
 
-=head4 L<Search::GIN::Extract::ClassMap::Like>
+=item L<< C<CoercedClassMap>|Search::GIN::Extract::ClassMap::Types/CoercedClassMap >>
+
+=item L<< C<::ClassMap::Like>|Search::GIN::Extract::ClassMap::Like >>
 
 HashRef's are automatically type-cast.
 
+=back
+
 =cut
 
-has 'extract_isa'  => ( 'isa', IsaClassMap,  'is', 'rw', 'coerce', 1, default => sub { CMIsa->new() } );
-has 'extract_does' => ( 'isa', DoesClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMDoes->new() } );
-has 'extract'      => ( 'isa', LikeClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMLike->new() } );
+has 'extract' => ( 'isa', LikeClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMLike->new() } );
 
 no Moose;
 __PACKAGE__->meta->make_immutable;
 
-=head1 METHODS
+=method C<extract_values>
 
-=head2 extract_values
+  my ( @values ) = $object->extract_values( $extractee );
 
-=head3 for: L<Search::GIN::Extract>
+B<for:> L<< C<Search::GIN::Extract>|Search::GIN::Extract >>
+
+Iterates the contents of the C<< extract($|_\w+$) >> rules, and asks them to
+extract their respective information, and returns the resulting results as a
+list.
 
 =cut
 
@@ -133,7 +165,8 @@ In reality, the form is more like this:
 
 With the minor exception of the 2 exception cases, passing
 an array ref, or a coderef, which internally are typecasted to
-L<Search::GIN::Extract::Attributes> and L<Search::GIN::Extract::Callback>
+L<< C<Search::GIN::Extract::Attributes>|Search::GIN::Extract::Attributes >>
+and L<< C<Search::GIN::Extract::Callback>|Search::GIN::Extract::Callback >>
 automatically.
 
 =head1 WARNING

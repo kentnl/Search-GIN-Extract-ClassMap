@@ -11,26 +11,21 @@ package Search::GIN::Extract::ClassMap::Like;
 use Moose qw( with blessed );
 use namespace::autoclean;
 
-=head1 ROLES
-
-=head2 L<Search::GIN::Extract::ClassMap::Role>
-
-=cut
-
 with 'Search::GIN::Extract::ClassMap::Role';
 
 no Moose;
 __PACKAGE__->meta->make_immutable;
 
-=head1 METHODS
+=method C<matches>
 
-=head2 matches
+  # List of Search::GIN::Extract objects
+  my ( @extractors ) = $like_object->matches( $extractee );
 
 returns a list of extractors that are in the map for the object.
 
-=head3 signature: ->matches( $object )
-
-=head3 return: Search::GIN::Extract @items
+  for my $extractor ( @extractors ) {
+    my $metadata = $extractor->extract_values( $extractee );
+  }
 
 =cut
 
@@ -47,4 +42,3 @@ sub matches {
 }
 
 1;
-

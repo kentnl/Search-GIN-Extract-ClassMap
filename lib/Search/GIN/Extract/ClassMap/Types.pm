@@ -16,82 +16,84 @@ use MooseX::Types -declare => [
     LikeClassMap
     Extractor
     CoercedClassMap
-  ],
+    ],
 ];
 
-=head1 TYPES
+=type C<IsaClassMap>
 
-=head2 IsaClassMap
+=over 4
 
-=head3 class_type
+=item C<class_type> : L<< C<::ClassMap::Isa>|Search::GIN::Extract::ClassMap::Isa >>
 
-=head4 L<Search::GIN::Extract::ClassMap::Isa>
+=item C<coerces_from>: C<HashRef>
 
-=head3 COERCIONS
-
-=head4 HashRef
-
-=cut
-
-=head2 DoesClassMap
-
-=head3 class_type
-
-=head4 L<Search::GIN::Extract::ClassMap::Does>
-
-=head3 COERCIONS
-
-=head4 HashRef
-
-=cut
-
-=head2 LikeClassMap
-
-=head3 class_type
-
-=head4 L<Search::GIN::Extract::ClassMap::Like>
-
-=head3 COERCIONS
-
-=head4 HashRef
+=back
 
 =cut
 
 ## no critic (Subroutines::ProhibitCallsToUndeclaredSubs)
-class_type IsaClassMap,  { class => 'Search::GIN::Extract::ClassMap::Isa' };
-class_type DoesClassMap, { class => 'Search::GIN::Extract::ClassMap::Does' };
-class_type LikeClassMap, { class => 'Search::GIN::Extract::ClassMap::Like' };
+class_type IsaClassMap, { class => 'Search::GIN::Extract::ClassMap::Isa' };
 
 coerce IsaClassMap, from HashRef, via {
   require Search::GIN::Extract::ClassMap::Isa;
   'Search::GIN::Extract::ClassMap::Isa'->new( classmap => $_ );
 };
+
+=type C<DoesClassMap>
+
+=over 4
+
+=item C<class_type>: L<< C<::ClassMap::Does>|Search::GIN::Extract::ClassMap::Does >>
+
+=item coerces from: C<HashRef>
+
+=back
+
+=cut
+
+class_type DoesClassMap, { class => 'Search::GIN::Extract::ClassMap::Does' };
+
 coerce DoesClassMap, from HashRef, via {
   require Search::GIN::Extract::ClassMap::Does;
   'Search::GIN::Extract::ClassMap::Does'->new( classmap => $_ );
 };
+
+=type C<LikeClassMap>
+
+=over 4
+
+=item C<class_type>: L<< C<::ClassMap::Like>|Search::GIN::Extract::ClassMap::Like >>
+
+=item coerces from: C<HashRef>
+
+=back
+
+=cut
+
+class_type LikeClassMap, { class => 'Search::GIN::Extract::ClassMap::Like' };
+
 coerce LikeClassMap, from HashRef, via {
   require Search::GIN::Extract::ClassMap::Like;
   'Search::GIN::Extract::ClassMap::Like'->new( classmap => $_ );
 };
 
-=head2 Extractor
+=type C<Extractor>
 
-Mostly here to identify things that derive from L<Search::GIN::Extract>
+Mostly here to identify things that derive from L<< C<Search::GIN::Extract>|Search::GIN::Extract >>
 
-=head3 subtype
+=over 4
 
-=head4 Object
+=item C<subtype>: C<Object>
 
-=head3 COERCIONS
+=item coerces from: C<ArrayRef[ Str ]>
 
-=head4 ArrayRef[ Str ]
+Coerces into a L<< C<::Extract::Attributes>|Search::GIN::Extract::Attributes >> instance.
 
-Coerces into a L<Search::GIN::Extract::Attributes> instance.
+=item coerces from: C<CodeRef>
 
-=head4 CodeRef
+Coerces into a L<< C<::Extract::Callback>|Search::GIN::Extract::Callback >> instance.
 
-Coerces into a L<Search::GIN::Extract::Callback> instance.
+=back
 
 =cut
 
@@ -110,20 +112,20 @@ coerce Extractor, from CodeRef, via {
   Search::GIN::Extract::Callback->new( extract => $_ );
 };
 
-=head2 CoercedClassMap
+=type C<CoercedClassMap>
 
 This is here to implement a ( somewhat hackish ) semi-deep recursive coercion.
 
 Ensures all keys are of type L</Extractor> in order to be a valid hashref,
 and applies L</Extractor>'s coercions where possible.
 
-=head3 subtype
+=over 4
 
-=head4 HashRef
+=item C<subtype>: C<HashRef[ Extractor ]>
 
-=head3 COERCIONS
+=item coerces from: C<HashRef[ coerce Extractor ]>
 
-=head4 HashRef
+=back
 
 =cut
 

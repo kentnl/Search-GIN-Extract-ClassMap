@@ -40,68 +40,83 @@ In reality, the form is more like this:
 
 With the minor exception of the 2 exception cases, passing
 an array ref, or a coderef, which internally are typecasted to
-[Search::GIN::Extract::Attributes](https://metacpan.org/pod/Search::GIN::Extract::Attributes) and [Search::GIN::Extract::Callback](https://metacpan.org/pod/Search::GIN::Extract::Callback)
+[`Search::GIN::Extract::Attributes`](https://metacpan.org/pod/Search::GIN::Extract::Attributes)
+and [`Search::GIN::Extract::Callback`](https://metacpan.org/pod/Search::GIN::Extract::Callback)
 automatically.
 
 # WARNING
 
 This is an early release, API is prone to change without much warning, but best attempts will be made to avoid the need.
 
-# ROLES
+# METHODS
 
-## [Search::GIN::Extract](https://metacpan.org/pod/Search::GIN::Extract)
+## `extract_values`
+
+    my ( @values ) = $object->extract_values( $extractee );
+
+**for:** [`Search::GIN::Extract`](https://metacpan.org/pod/Search::GIN::Extract)
+
+Iterates the contents of the `extract($|_\w+$)` rules, and asks them to
+extract their respective information, and returns the resulting results as a
+list.
 
 # ATTRIBUTES
 
-## extract\_isa
+## `extract_isa`
+
+    my $object = Search::GIN::Extract::ClassMap->new(
+      extract_isa => $isa_thing
+    );
+    # or
+    $object->extract_isa( $isa_thing )
 
 Applied on all objects where $object->isa( $classname );
 
-### types:
+### `$isa_thing`
 
-#### HashRef\[ ["Extractor" in Search::GIN::Extract::ClassMap::Types](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Types#Extractor) \] ->
+- `HashRef[ [Extractor](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Types#Extractor) ]`
+- [`CoercedClassMap`](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Types#CoercedClassMap)
+- [`::ClassMap::Isa`](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Isa)
 
-#### ["CoercedClassMap" in Search::GIN::Extract::ClassMap::Types](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Types#CoercedClassMap) ->
+    HashRef's are automatically type-cast.
 
-#### [Search::GIN::Extract::ClassMap::Isa](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Isa)
+## `extract_does`
 
-HashRef's are automatically type-cast.
-
-## extract\_does
+    my $object =  Search::GIN::Extract::ClassMap->new(
+      extract_does => $does_thing
+    );
+    # or
+    $object->extract_does( $does_thing );
 
 Applied on all objects where $object->does( $classname );
 
-### types:
+### `$does_thing`
 
-#### HashRef\[ ["Extractor" in Search::GIN::Extract::ClassMap::Types](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Types#Extractor) \] ->
+- `HashRef[ [Extractor](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Types#Extractor) ]`
+- [`CoercedClassMap`](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Types#CoercedClassMap)
+- [`::ClassMap::Does`](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Does)
 
-#### ["CoercedClassMap" in Search::GIN::Extract::ClassMap::Types](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Types#CoercedClassMap) ->
+    HashRef's are automatically type-cast.
 
-#### [Search::GIN::Extract::ClassMap::Does](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Does)
+## `extract`
 
-HashRef's are automatically type-cast.
-
-## extract\_does
+    my $object =  Search::GIN::Extract::ClassMap->new(
+      extract => $like_thing
+    );
+    # or
+    $object->extract( $like_thing );
 
 Applied on all objects where $object->does( $classname ) OR $object->isa( $classname );
 
 this doesn't make complete sense, but its handy for lazy people.
 
-### types:
+### `$like_thing`
 
-#### HashRef\[ ["Extractor" in Search::GIN::Extract::ClassMap::Types](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Types#Extractor) \]
+- `HashRef[ [Extractor](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Types#Extractor) ]`
+- [`CoercedClassMap`](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Types#CoercedClassMap)
+- [`::ClassMap::Like`](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Like)
 
-#### ["CoercedClassMap" in Search::GIN::Extract::ClassMap::Types](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Types#CoercedClassMap) ->
-
-#### [Search::GIN::Extract::ClassMap::Like](https://metacpan.org/pod/Search::GIN::Extract::ClassMap::Like)
-
-HashRef's are automatically type-cast.
-
-# METHODS
-
-## extract\_values
-
-### for: [Search::GIN::Extract](https://metacpan.org/pod/Search::GIN::Extract)
+    HashRef's are automatically type-cast.
 
 # AUTHOR
 
