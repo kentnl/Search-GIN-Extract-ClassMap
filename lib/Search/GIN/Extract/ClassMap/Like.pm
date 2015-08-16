@@ -1,7 +1,6 @@
 use strict;
 use warnings;
 package Search::GIN::Extract::ClassMap::Like;
-our $AUTHORITY = 'cpan:KENTNL';
 $Search::GIN::Extract::ClassMap::Like::VERSION = '0.01060818';
 # ABSTRACT: Map Extractors based on what an object 'isa' or 'does'
 
@@ -11,7 +10,23 @@ use MooseX::Types::Moose qw( :all );
 use namespace::autoclean;
 
 
+
+
+
+
+
 with 'Search::GIN::Extract::ClassMap::Role';
+
+
+
+
+
+
+
+
+
+
+
 
 
 sub matches {

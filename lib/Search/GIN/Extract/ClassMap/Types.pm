@@ -2,7 +2,6 @@ use strict;
 use warnings;
 
 package Search::GIN::Extract::ClassMap::Types;
-our $AUTHORITY = 'cpan:KENTNL';
 $Search::GIN::Extract::ClassMap::Types::VERSION = '0.01060818';
 # ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercions.
 
@@ -17,6 +16,41 @@ use MooseX::Types -declare => [
     CoercedClassMap
     ]
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -41,6 +75,25 @@ coerce LikeClassMap, from HashRef, via {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 subtype Extractor, as Object, where {
   $_->does('Search::GIN::Extract')
     or $_->isa('Search::GIN::Extract');
@@ -55,6 +108,22 @@ coerce Extractor, from CodeRef, via {
   require Search::GIN::Extract::Callback;
   Search::GIN::Extract::Callback->new( extract => $_ );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 subtype CoercedClassMap, as HashRef, where {

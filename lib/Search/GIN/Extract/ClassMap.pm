@@ -2,7 +2,6 @@ use strict;
 use warnings;
 
 package Search::GIN::Extract::ClassMap;
-our $AUTHORITY = 'cpan:KENTNL';
 $Search::GIN::Extract::ClassMap::VERSION = '0.01060818';
 # ABSTRACT: Delegate Extraction based on class.
 
@@ -15,14 +14,115 @@ use namespace::autoclean;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 with qw(
   Search::GIN::Extract
 );
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 has 'extract_isa'  => ( 'isa', IsaClassMap,  'is', 'rw', 'coerce', 1, default => sub { CMIsa->new() } );
 has 'extract_does' => ( 'isa', DoesClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMDoes->new() } );
 has 'extract'      => ( 'isa', LikeClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMLike->new() } );
+
+
+
+
+
+
+
 
 
 sub extract_values {

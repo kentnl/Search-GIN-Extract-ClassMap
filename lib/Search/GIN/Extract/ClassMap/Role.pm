@@ -2,11 +2,43 @@ use strict;
 use warnings;
 
 package Search::GIN::Extract::ClassMap::Role;
-our $AUTHORITY = 'cpan:KENTNL';
 $Search::GIN::Extract::ClassMap::Role::VERSION = '0.01060818';
 # ABSTRACT: The ClassMap core role for generally representing all the user config.
 
 use Moose::Role 0.90;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -15,6 +47,27 @@ requires 'matches';
 use MooseX::Types::Moose qw( :all );
 use Search::GIN::Extract::ClassMap::Types qw( :all );
 use namespace::autoclean;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 has classmap => (
@@ -29,6 +82,15 @@ has classmap => (
     'classmap_get'     => 'get',
   },
 );
+
+
+
+
+
+
+
+
+
 
 
 sub extract_values {

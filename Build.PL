@@ -8,10 +8,11 @@ use Module::Build 0.28;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.28"
+    "Module::Build" => "0.4214"
   },
   "configure_requires" => {
-    "Module::Build" => "0.28"
+    "Module::Build" => "0.4214",
+    "perl" => "5.006"
   },
   "dist_abstract" => "Delegate Extraction based on class.",
   "dist_author" => [
@@ -21,7 +22,9 @@ my %module_build_args = (
   "dist_version" => "0.01060818",
   "license" => "perl",
   "module_name" => "Search::GIN::Extract::ClassMap",
-  "recommends" => {},
+  "recommends" => {
+    "Moose" => "2.000"
+  },
   "recursive_test_files" => 1,
   "requires" => {
     "Moose" => "0.90",
@@ -39,9 +42,8 @@ my %module_build_args = (
   },
   "script_files" => [],
   "test_requires" => {
+    "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
-    "IO::Handle" => 0,
-    "IPC::Open3" => 0,
     "Test::More" => "1.001014",
     "perl" => "5.006"
   }
@@ -49,10 +51,9 @@ my %module_build_args = (
 
 
 my %fallback_build_requires = (
+  "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
-  "IO::Handle" => 0,
-  "IPC::Open3" => 0,
-  "Module::Build" => "0.28",
+  "Module::Build" => "0.4214",
   "Test::More" => "1.001014",
   "perl" => "5.006"
 );
