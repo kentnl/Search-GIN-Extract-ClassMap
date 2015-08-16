@@ -1,3 +1,4 @@
+use 5.006;    # our
 use strict;
 use warnings;
 
@@ -5,7 +6,8 @@ package Search::GIN::Extract::ClassMap::Types;
 $Search::GIN::Extract::ClassMap::Types::VERSION = '0.01060818';
 # ABSTRACT: Types for Search::GIN::Extract::ClassMap, mostly for coercions.
 
-# $Id:$
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use MooseX::Types::Moose qw( :all );
 use MooseX::Types -declare => [
   qw[
@@ -16,7 +18,6 @@ use MooseX::Types -declare => [
     CoercedClassMap
     ]
 ];
-
 
 
 
@@ -72,7 +73,6 @@ coerce LikeClassMap, from HashRef, via {
   require Search::GIN::Extract::ClassMap::Like;
   'Search::GIN::Extract::ClassMap::Like'->new( classmap => $_ );
 };
-
 
 
 

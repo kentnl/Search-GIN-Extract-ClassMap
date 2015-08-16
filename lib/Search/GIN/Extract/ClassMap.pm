@@ -1,3 +1,4 @@
+use 5.006;    # our
 use strict;
 use warnings;
 
@@ -5,8 +6,10 @@ package Search::GIN::Extract::ClassMap;
 $Search::GIN::Extract::ClassMap::VERSION = '0.01060818';
 # ABSTRACT: Delegate Extraction based on class.
 
-use Moose 0.90;
-use Search::GIN::Extract::ClassMap::Types qw( :all );
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
+use Moose 0.90 qw( with has );
+use Search::GIN::Extract::ClassMap::Types qw( IsaClassMap DoesClassMap LikeClassMap );
 use aliased 'Search::GIN::Extract::ClassMap::Isa'  => 'CMIsa';
 use aliased 'Search::GIN::Extract::ClassMap::Does' => 'CMDoes';
 use aliased 'Search::GIN::Extract::ClassMap::Like' => 'CMLike';
@@ -117,6 +120,9 @@ has 'extract_isa'  => ( 'isa', IsaClassMap,  'is', 'rw', 'coerce', 1, default =>
 has 'extract_does' => ( 'isa', DoesClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMDoes->new() } );
 has 'extract'      => ( 'isa', LikeClassMap, 'is', 'rw', 'coerce', 1, default => sub { CMLike->new() } );
 
+no Moose;
+__PACKAGE__->meta->make_immutable;
+
 
 
 
@@ -134,8 +140,6 @@ sub extract_values {
   return @found;
 }
 
-no Moose;
-__PACKAGE__->meta->make_immutable;
 1;
 
 __END__

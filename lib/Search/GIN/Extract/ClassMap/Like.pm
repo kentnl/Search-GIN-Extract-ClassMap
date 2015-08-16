@@ -1,12 +1,14 @@
+use 5.006;    # our
 use strict;
 use warnings;
+
 package Search::GIN::Extract::ClassMap::Like;
 $Search::GIN::Extract::ClassMap::Like::VERSION = '0.01060818';
 # ABSTRACT: Map Extractors based on what an object 'isa' or 'does'
 
-# $Id:$
-use Moose;
-use MooseX::Types::Moose qw( :all );
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
+use Moose qw( with blessed );
 use namespace::autoclean;
 
 
@@ -16,6 +18,9 @@ use namespace::autoclean;
 
 
 with 'Search::GIN::Extract::ClassMap::Role';
+
+no Moose;
+__PACKAGE__->meta->make_immutable;
 
 
 
@@ -40,9 +45,6 @@ sub matches {
   }
   return @m;
 }
-
-no Moose;
-__PACKAGE__->meta->make_immutable;
 
 1;
 
