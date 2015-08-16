@@ -35,11 +35,11 @@ returns a list of extractors that are in the map for the object.
 =cut
 
 sub matches {
-  my ( $self, $object ) = @_;
+  my ( $self, $extractee ) = @_;
   my @m;
-  return @m if not blessed $object;
+  return @m if not blessed $extractee;
   for my $class ( $self->classmap_entries ) {
-    if ( $object->does($class) ) {
+    if ( $extractee->does($class) ) {
       push @m, $self->classmap_get($class);
     }
   }

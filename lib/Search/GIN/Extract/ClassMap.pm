@@ -132,10 +132,10 @@ __PACKAGE__->meta->make_immutable;
 =cut
 
 sub extract_values {
-  my ( $self, $object ) = @_;
+  my ( $self, $extractee ) = @_;
   my @found;
   for ( $self->extract_isa, $self->extract_does, $self->extract ) {
-    push @found, $_->extract_values($object);
+    push @found, $_->extract_values($extractee);
   }
   return @found;
 }
