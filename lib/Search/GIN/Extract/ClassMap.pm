@@ -21,49 +21,6 @@ use namespace::autoclean;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 with qw(
   Search::GIN::Extract
 );
@@ -158,44 +115,40 @@ version 0.01060818
 
 =head1 SYNOPSIS
 
-  my $extractor = Search::GIN::Extract::ClassMap->new(
-    extract_isa => {
-      'Foo' => [qw( bar baz quux )],
-      'Bar' => Search::GIN::Extract::AttributeIndex->new(),
-      'Baz' => sub { shift; my $object = shift; { a => $object->a() } },
-    },
-    extract_does => {
+my $extractor = Search::GIN::Extract::ClassMap->new(
+  extract_isa => {
+    'Foo' => [qw( bar baz quux )],
+    'Bar' => Search::GIN::Extract::AttributeIndex->new(),
+    'Baz' => sub { shift; my $object = shift; { a => $object->a() } },
+  },
+  extract_does => {
 
-    },
-    extract =>  {
-      /* either ISA or DOES */
-    },
-  );
+  },
+  extract =>  {
+    /* either ISA or DOES */
+  },
+);
 
 In reality, the form is more like this:
 
-  my $extractor = Search::GIN::Extract::ClassMap->new(
-    extract_isa => {
-      'Foo' => Search::GIN::Extract::*,
-      'Bar' => Search::GIN::Extract::*,
-      'Baz' => Search::GIN::Extract::*,
-    },
-    extract_does => {
+my $extractor = Search::GIN::Extract::ClassMap->new(
+  extract_isa => {
+    'Foo' => Search::GIN::Extract::*,
+    'Bar' => Search::GIN::Extract::*,
+    'Baz' => Search::GIN::Extract::*,
+  },
+  extract_does => {
 
-    },
-    extract =>  {
-      /* either ISA or DOES */
-    },
-  );
+  },
+  extract =>  {
+    /* either ISA or DOES */
+  },
+);
 
 With the minor exception of the 2 exception cases, passing
 an array ref, or a coderef, which internally are typecasted to
 L<Search::GIN::Extract::Attributes> and L<Search::GIN::Extract::Callback>
 automatically.
-
-=head1 WARNING
-
-This is an early release, API is prone to change without much warning, but best attempts will be made to avoid the need.
 
 =head1 ROLES
 
@@ -252,6 +205,10 @@ HashRef's are automatically type-cast.
 =head2 extract_values
 
 =head3 for: L<Search::GIN::Extract>
+
+=head1 WARNING
+
+This is an early release, API is prone to change without much warning, but best attempts will be made to avoid the need.
 
 =head1 AUTHOR
 
