@@ -97,8 +97,8 @@ no Moose::Role;
 
 
 sub extract_values {
-  my ( $self, $object ) = @_;
-  return map { $_->extract_values($object) } $self->matches($object);
+  my ( $self, $extractee ) = @_;
+  return map { $_->extract_values($extractee) } $self->matches($extractee);
 }
 
 1;

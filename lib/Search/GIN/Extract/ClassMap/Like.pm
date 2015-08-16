@@ -35,11 +35,11 @@ __PACKAGE__->meta->make_immutable;
 
 
 sub matches {
-  my ( $self, $object ) = @_;
+  my ( $self, $extractee ) = @_;
   my @m;
-  return @m if not blessed $object;
+  return @m if not blessed $extractee;
   for my $class ( $self->classmap_entries ) {
-    if ( $object->isa($class) or $object->does($class) ) {
+    if ( $extractee->isa($class) or $extractee->does($class) ) {
       push @m, $self->classmap_get($class);
     }
   }
