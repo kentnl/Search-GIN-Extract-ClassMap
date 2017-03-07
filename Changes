@@ -1,4 +1,11 @@
-﻿Revision history for Search-GIN-Extract-ClassMap
+Revision history for Search-GIN-Extract-ClassMap
+
+1.000003 2017-03-07T10:08:08Z b8fae85
+ - Bugfix: avoid test failures with -Ddefault_inc_excludes_dot
+
+ [Dependencies::Stats]
+ - Dependencies changed since 1.000002, see misc/*.deps* for details
+ - develop: +3 ↑2 (suggests: ↑2)
 
 1.000002 2015-08-16T08:09:03Z 7e56737
  [Documentation]

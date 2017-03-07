@@ -6,7 +6,7 @@ package Search::GIN::Extract::ClassMap::Isa;
 
 # ABSTRACT: Map Extractors based on an objects inheritance
 
-our $VERSION = '1.000002';
+our $VERSION = '1.000003';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -57,7 +57,7 @@ Search::GIN::Extract::ClassMap::Isa - Map Extractors based on an objects inherit
 
 =head1 VERSION
 
-version 1.000002
+version 1.000003
 
 =head1 METHODS
 
@@ -78,7 +78,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2015 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2017 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
