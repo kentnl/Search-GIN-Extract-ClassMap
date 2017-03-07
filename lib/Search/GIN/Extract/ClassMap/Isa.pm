@@ -6,7 +6,7 @@ package Search::GIN::Extract::ClassMap::Isa;
 
 # ABSTRACT: Map Extractors based on an objects inheritance
 
-our $VERSION = '1.000003';
+our $VERSION = '1.000004';
 
 # AUTHORITY
 
