@@ -1,9 +1,4 @@
 {
-   "failures" : {
-      "Search::GIN::Extract" : "module was not found in INC",
-      "Search::GIN::Extract::Attributes" : "module was not found in INC",
-      "Search::GIN::Extract::Callback" : "module was not found in INC"
-   },
    "modules" : {
       "CPAN::Meta" : "2.150010",
       "Dist::Zilla" : "6.009",
@@ -66,6 +61,9 @@
       "MooseX::Types" : "0.50",
       "MooseX::Types::Moose" : "0.50",
       "Pod::Coverage::TrustPod" : "0.100003",
+      "Search::GIN::Extract" : "0.11",
+      "Search::GIN::Extract::Attributes" : "0.11",
+      "Search::GIN::Extract::Callback" : "0.11",
       "Software::License::Perl_5" : "0.103012",
       "Test::CPAN::Changes" : "0.400002",
       "Test::CPAN::Meta" : "0.25",
